@@ -1,0 +1,31 @@
+@use '../../../styles/vuetify/settings.scss';
+
+// rc-service-form-tab-container
+.rcs-ft-container {
+  border: 1px solid rgba(var(--v-theme-grey-400));
+  padding: 0;
+
+  .rcs-ft-header {
+    padding: 0;
+    background: rgba(var(--v-theme-grey-50));
+
+    .v-card-title {
+      padding: 1.25rem 1.25rem;
+    }
+  }
+
+  .rcs-ft-window {
+    background: white;
+    // padding: 1.5rem;
+    padding-bottom: 4rem;
+    padding-top: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @media #{map-get(settings.$display-breakpoints, 'sm-and-down')} {
+    border-radius: 0 !important;
+    border-left: none;
+    border-right: none;
+  }
+}

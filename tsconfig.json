@@ -1,0 +1,51 @@
+{
+  "compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "declaration": true,
+    "declarationDir": "./dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+		"importHelpers": true,
+    "jsx": "preserve",
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+		"noEmit": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitAny": false,
+		"noUncheckedIndexedAccess": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+    "outDir": "dist",
+    "paths": {
+      "@/*": ["./src/*"],
+    },
+    "resolveJsonModule": true,
+		"rootDir": "src",
+    "skipLibCheck": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "target": "ESNext",
+    "types": [
+      "vite-plugin-vue-layouts/client",
+      "node",
+    ],
+    "useDefineForClassFields": true,
+  },
+  "exclude": [
+    "dist",
+    "build",
+    "node_modules"
+  ],
+  "include": [
+    "package.json",
+    "./src/**/*.vue",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+  ],
+  "references": [{ "path": "./tsconfig.node.json" }],
+}
