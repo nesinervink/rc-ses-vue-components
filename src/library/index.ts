@@ -95,7 +95,6 @@ export function createRcSesComponents(options: object = {}): Plugin<[]> {
       .component('RcSesSearchableArea', RcSesSearchableArea)
       .component('RcSesSearchField', RcSesSearchField)
       .component('RcSesSearchableField', RcSesSearchableField)
-
     app.component('RcSesSelectField', RcSesSelectField)
 
     app.component('RcSesTextField', RcSesTextField)
