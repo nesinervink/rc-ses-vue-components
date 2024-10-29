@@ -6,10 +6,15 @@
     :description="fieldDescription"
     :tooltip="fieldTooltip"
     :tooltip-title="fieldTooltipTitle"
+    :tooltip-on-click="fieldTooltipOnClick"
     :for="name"
   >
     <v-card class="bg-grey-50" color="grey" variant="outlined">
-      <RcSesCheckbox v-model="model" v-bind="$attrs" :label="label" :error="undefined" />
+      <RcSesCheckbox v-model="model" v-bind="$attrs" :label="label" :error="undefined">
+        <template v-if="$slots.label" #label="labelProps">
+          <slot name="label" v-bind="labelProps">{{ label }}</slot>
+        </template>
+      </RcSesCheckbox>
     </v-card>
     <RcSesError v-if="error">{{ error }}</RcSesError>
   </RcSesFieldWrapper>
