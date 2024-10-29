@@ -3,6 +3,7 @@ import VCard from './defaults/VCard'
 import VCheckbox from './defaults/VCheckbox'
 import VFileInput from './defaults/VFileInput'
 import VTextField from './defaults/VTextField'
+import VTextarea from './defaults/VTextarea'
 
 export default {
   global: {
@@ -13,4 +14,5 @@ export default {
   VCheckbox,
   VTextField,
   VFileInput,
+  VTextarea,
 }
