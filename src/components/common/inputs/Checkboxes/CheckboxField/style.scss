@@ -1,3 +1,5 @@
+@use '../../../../../styles/vuetify/settings.scss';
+
 .rc-checkbox-field {
   width: 100%;
 
@@ -6,6 +8,12 @@
   }
 
   .rc-field-labels {
-    align-self: center;
+    align-self: flex-start
+  }
+
+  @media #{map-get(settings.$display-breakpoints, 'md-and-up')} {
+    .rc-field-labels {
+      align-self: center;
+    }
   }
 }

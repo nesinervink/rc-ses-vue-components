@@ -1,7 +1,14 @@
 <template>
-  <v-tooltip class="rc-tooltip p0" v-bind="props">
-    <template v-if="$slots.activator" #activator="activator">
-      <slot name="activator" v-bind="activator" />
+  <v-tooltip class="rc-tooltip p0" v-bind="props" :close-on-content-click="true">
+    <template #activator="binds">
+      <slot name="activator" v-bind="binds">
+        <v-icon
+          v-bind="binds.props"
+          icon="$tooltip"
+          size="small"
+          class="rc-tooltip-label-icon ml-2"
+        />
+      </slot>
     </template>
 
     <template #default>
@@ -23,14 +30,12 @@
 
 <script setup lang="ts">
 import './style.scss'
-
-interface TooltipProps {
-  title?: string
-  description?: string
-}
+import { TooltipProps } from './type'
 
 const props = withDefaults(defineProps<TooltipProps>(), {
   title: undefined,
   description: undefined,
+  maxWidth: 270,
+  contained: false,
 })
 </script>

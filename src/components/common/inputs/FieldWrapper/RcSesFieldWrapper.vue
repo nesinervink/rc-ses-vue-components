@@ -15,7 +15,8 @@
           :title="tooltipTitle"
           :description="tooltip"
           location="top"
-          max-width="270"
+          :open-on-click="tooltipOnClick"
+          :open-on-hover="!tooltipOnClick"
         >
           <template #activator="activator">
             <v-icon
@@ -44,7 +45,8 @@
         v-if="tooltip"
         :title="tooltipTitle"
         :description="tooltip"
-        max-width="270"
+        :open-on-click="tooltipOnClick"
+        :open-on-hover="!tooltipOnClick"
       >
         <template #activator="activator">
           <v-icon
@@ -71,6 +73,7 @@ type Props = {
   variant?: 'text' | 'outlined'
   tooltip?: string
   tooltipTitle?: string
+  tooltipOnClick?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -80,5 +83,6 @@ const props = withDefaults(defineProps<Props>(), {
   variant: 'text',
   tooltip: undefined,
   tooltipTitle: undefined,
+  tooltipOnClick: false,
 })
 </script>
