@@ -3,7 +3,7 @@ import { Meta, StoryFn } from '@storybook/vue3'
 import { ref } from 'vue'
 
 import RcSesTimePickerField from '@/components/common/inputs/TimePickerField/RcSesTimePickerField.vue'
-import { TimepickerFieldProps } from '@/components/common/inputs/TimePickerField/type'
+import { TimePickerFieldProps } from '@/components/common/inputs/TimePickerField/type'
 
 export default {
   title: 'components/common/inputs/TimePickerField',
@@ -11,7 +11,7 @@ export default {
   // argTypes: DatePickerFieldArgTypes,
 } as Meta
 
-const Template: StoryFn<TimepickerFieldProps> = (args) => ({
+const Template: StoryFn<TimePickerFieldProps> = (args) => ({
   components: { RcSesTimePickerField },
   setup() {
     const model = ref()
