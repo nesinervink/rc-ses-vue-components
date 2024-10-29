@@ -97,10 +97,13 @@ export function createRcSesComponents(options: object = {}): Plugin<[]> {
       .component('RcSesSearchableArea', RcSesSearchableArea)
       .component('RcSesSearchField', RcSesSearchField)
       .component('RcSesSearchableField', RcSesSearchableField)
+
     app.component('RcSesSelectField', RcSesSelectField)
 
     app.component('RcSesTextField', RcSesTextField)
     app.component('RcSesTextareaField', RcSesTextareaField)
+
+    app.component('RcSesTimePickerField', RcSesTimePickerField)
 
     app.component('RcSesTimePickerField', RcSesTimePickerField)
 
