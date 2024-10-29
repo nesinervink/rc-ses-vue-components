@@ -7,6 +7,7 @@ type Props = {
     variant?: 'text' | 'outlined';
     tooltip?: string;
     tooltipTitle?: string;
+    tooltipOnClick?: boolean;
 };
 declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToOption<Props>, {
     label: undefined;
@@ -15,6 +16,7 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
     variant: string;
     tooltip: undefined;
     tooltipTitle: undefined;
+    tooltipOnClick: boolean;
 }>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToOption<Props>, {
     label: undefined;
     description: undefined;
@@ -22,6 +24,7 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
     variant: string;
     tooltip: undefined;
     tooltipTitle: undefined;
+    tooltipOnClick: boolean;
 }>>>, {
     variant: "text" | "outlined";
     label: string;
@@ -29,6 +32,7 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
     for: string;
     tooltip: string;
     tooltipTitle: string;
+    tooltipOnClick: boolean;
 }, {}>, {
     default?(_: {}): any;
 }>;

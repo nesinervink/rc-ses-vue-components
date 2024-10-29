@@ -23,6 +23,7 @@ import { default as RcSesSearchField } from '../components/common/inputs/SearchF
 import { default as RcSesSearchableArea } from '../components/common/inputs/SearchableArea/RcSesSearchableArea.vue';
 import { default as RcSesSearchableField } from '../components/common/inputs/SearchableField/RcSesSearchableField.vue';
 import { default as RcSesSelectField } from '../components/common/inputs/SelectField/RcSesSelectField.vue';
+import { default as RcSesTextareaField } from '../components/common/inputs/TextAreaField/RcSesTextAreaField.vue';
 import { default as RcSesTextField } from '../components/common/inputs/TextField/RcSesTextField.vue';
 import { default as RcSesTable } from '../components/common/tables/table/RcSesTable.vue';
 import { default as RcSesTab } from '../components/common/tabs/RcSesTab.vue';
@@ -46,7 +47,7 @@ export { RcSesNumberStepper, RcSesNumberStepperField };
 export { RcSesPhoneField };
 export { RcSesRadio, RcSesRadioButtonsField, RcSesRadioField };
 export { RcSesSearchableArea, RcSesSelectField, RcSesSearchField };
-export { RcSesTextField };
+export { RcSesTextField, RcSesTextareaField };
 export { RcSesAccordion };
 export { RcSesError, RcSesFormControl };
 export { RcSesFileDropzone, RcSesFileDropzoneField };
