@@ -75,6 +75,8 @@
 
       <Field v-slot="fieldProps" name="ieskoti">
         <RcSesSearchableField
+          field-tooltip-title="Tolltip title"
+          field-tooltip="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard."
           v-bind="fieldProps.field"
           :error="fieldProps.errorMessage"
           field-label="Ieškoti"
@@ -106,6 +108,25 @@
           :max-width="300"
           placeholder="Pradžia  →  Pabaiga"
           name="laikotarpis"
+        >
+          <template #append-inner>
+            <RcSesTooltip
+              title="Tooltip title"
+              description="Tooltip description"
+            ></RcSesTooltip>
+          </template>
+        </RcSesDatePickerField>
+      </Field>
+
+      <Field v-slot="fieldProps" name="laikas">
+        <RcSesTimepickerField
+          v-bind="fieldProps.field"
+          :error="fieldProps.errorMessage"
+          field-label="Laikas"
+          class="form-control"
+          :max-width="300"
+          placeholder="Pasirinkite laiką"
+          name="laikas"
         />
       </Field>
 
@@ -129,7 +150,16 @@
           field-label="Skaičius"
           :max-width="300"
           name="skaicius"
-        />
+        >
+          <template #append-inner>
+            <RcSesTooltip
+              title="Tooltip title"
+              description="Tooltip description"
+              :open-on-click="true"
+              :open-on-hover="false"
+            ></RcSesTooltip>
+          </template>
+        </RcSesNumberStepperField>
       </Field>
 
       <Field v-slot="fieldProps" name="sutikimas">
@@ -174,7 +204,14 @@
           field-label="Pavadinimas"
           name="pavadinimas"
           placeholder="Pavadinimas"
-        />
+        >
+          <template #append>
+            <RcSesTooltip
+              title="Tooltip title"
+              description="Tooltip description"
+            ></RcSesTooltip>
+          </template>
+        </RcSesTextField>
       </Field>
 
       <Field v-slot="fieldProps" name="radioPasirinkimas">

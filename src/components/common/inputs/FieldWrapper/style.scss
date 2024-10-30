@@ -44,7 +44,7 @@
   @media #{map-get(settings.$display-breakpoints, 'md-and-up')} {
     flex-direction: row;
 
-    .rc-tooltip-label-icon {
+    .rc-tooltip--label-icon {
       display: none;
     }
 

@@ -6,7 +6,7 @@
           v-bind="binds.props"
           icon="$tooltip"
           size="small"
-          class="rc-tooltip-label-icon ml-2"
+          class="rc-tooltip--label-icon ml-2"
         />
       </slot>
     </template>
