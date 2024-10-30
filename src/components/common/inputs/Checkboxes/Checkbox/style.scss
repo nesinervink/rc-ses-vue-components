@@ -19,14 +19,14 @@
   }
 
   // FOCUS STATE
-  .v-selection-control--focused {
+  .v-selection-control--focused .v-selection-control__input {
     .v-icon {
       @include make-focus-before(8px);
     }
   }
 
   // HOVER STATE
-  &:hover {
+  &:hover .v-selection-control__input {
     .v-icon {
       border-radius: 4px;
       box-shadow: 0 0 0 3px rgba(var(--v-theme-primary), 0.2);
@@ -38,13 +38,13 @@
   }
 
   // DISABLED STATE
-  &.v-input--disabled {
+  &.v-input--disabled .v-selection-control__input {
     .v-icon {
       color: white;
     }
   }
 
-  &.v-input--error {
+  &.v-input--error .v-selection-control__input {
     .v-icon {
       color: white;
 
@@ -53,7 +53,7 @@
       }
     }
 
-    &:hover {
+    &:hover .v-selection-control__input {
       .v-icon {
         border-radius: 4px;
         box-shadow: 0 0 0 3px rgba(var(--v-theme-error), 0.2);
@@ -61,7 +61,7 @@
       }
     }
 
-    &.rc-checkbox--checked {
+    &.rc-checkbox--checked .v-selection-control__input {
       .v-icon {
         color: rgb(var(--v-theme-error));
       }

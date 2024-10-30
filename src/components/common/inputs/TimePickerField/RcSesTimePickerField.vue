@@ -82,12 +82,12 @@ import { computed, ref } from 'vue'
 
 import RcSesTextField from '@/components/common/inputs/TextField/RcSesTextField.vue'
 
-import type { TimepickerFieldProps } from './type'
+import type { TimePickerFieldProps } from './type'
 
-const props = defineProps<TimepickerFieldProps>()
+const props = defineProps<TimePickerFieldProps>()
 const model = defineModel<string>()
 
-const activator = ref<string | undefined>(undefined)
+const activator = ref<'parent' | undefined>(undefined)
 const menu = ref(false)
 const timeInput = ref<any | null>(null)
 const editingHours = ref(false)

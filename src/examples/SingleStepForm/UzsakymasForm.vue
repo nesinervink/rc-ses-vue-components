@@ -16,10 +16,12 @@
       </Field>
 
       <Field v-slot="fieldProps" name="ilgas">
-        <RcSesTextField
+        <RcSesTextAreaField
           v-bind="fieldProps.field"
           :error="fieldProps.errorMessage"
           class="form-control"
+          :rows="2"
+          :field-tooltip-on-click="true"
           field-tooltip="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard."
           field-label="Ilgas tekstas"
           field-description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard."
@@ -27,7 +29,7 @@
           placeholder="Tekstas"
           messages="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard."
           counter="300"
-        ></RcSesTextField>
+        ></RcSesTextAreaField>
       </Field>
 
       <Field v-slot="fieldProps" name="tikslas">
@@ -143,6 +145,27 @@
         />
       </Field>
 
+      <Field v-slot="fieldProps" name="sutikimasTooltip">
+        <RcSesCheckboxField
+          v-bind="fieldProps.field"
+          :error="fieldProps.errorMessage"
+          :field-wrapper-props="{
+            class: 'form-control',
+          }"
+          label="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+          field-label="Sutikimas + tooltip"
+          name="sutikimasTooltip"
+        >
+          <template #label="labelProps">
+            <span v-bind="labelProps">{{ labelProps.label }}</span>
+            <RcSesTooltip
+              title="Tooltip title"
+              description="Tooltip description"
+            ></RcSesTooltip>
+          </template>
+        </RcSesCheckboxField>
+      </Field>
+
       <Field v-slot="fieldProps" name="pavadinimas">
         <RcSesTextField
           v-bind="fieldProps.field"
@@ -242,8 +265,10 @@ import RcSesRadioButtonsField from '@/components/common/inputs/RadioButtonsField
 import RcSesRadioField from '@/components/common/inputs/Radios/RadioFields/RcSesRadioField.vue'
 import RcSesSearchableField from '@/components/common/inputs/SearchableField/RcSesSearchableField.vue'
 import RcSesSelectField from '@/components/common/inputs/SelectField/RcSesSelectField.vue'
+import RcSesTextAreaField from '@/components/common/inputs/TextAreaField/RcSesTextAreaField.vue'
 import RcSesTextField from '@/components/common/inputs/TextField/RcSesTextField.vue'
 import RcSesTimepickerField from '@/components/common/inputs/TimePickerField/RcSesTimePickerField.vue'
+import RcSesTooltip from '@/components/common/tooltip/RcSesTooltip.vue'
 import SearchModal from '@/examples/modals/SearchModal.vue'
 
 const FormSchema = yup.object({

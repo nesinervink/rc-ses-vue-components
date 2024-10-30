@@ -1,14 +1,14 @@
-import { TimePickerFieldProps } from './type';
+import { TextAreaFieldProps } from './type';
 import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, ComputedRef, Ref, PropType } from 'vue';
 
-declare let __VLS_typeProps: TimePickerFieldProps;
+declare let __VLS_typeProps: TextAreaFieldProps;
 type __VLS_PublicProps = {
-    modelValue?: string;
+    modelValue?: any;
 } & typeof __VLS_typeProps;
-declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_TypePropsToOption<__VLS_PublicProps>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
-    "update:modelValue": (modelValue: string) => void;
-}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_TypePropsToOption<__VLS_PublicProps>>> & {
-    "onUpdate:modelValue"?: ((modelValue: string) => any) | undefined;
+declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToOption<__VLS_PublicProps>, {}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
+    "update:modelValue": (modelValue: any) => void;
+}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToOption<__VLS_PublicProps>, {}>>> & {
+    "onUpdate:modelValue"?: ((modelValue: any) => any) | undefined;
 }, {}, {}>, {
     append?(_: {
         id: ComputedRef<string>;
@@ -29,6 +29,14 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_TypeProps
         controlRef: Ref<HTMLElement | undefined>;
         focus: () => void;
         blur: () => void;
+    }): any;
+    clear?(_: {
+        isActive: Ref<boolean>;
+        isFocused: Ref<boolean>;
+        controlRef: Ref<HTMLElement | undefined>;
+        focus: () => void;
+        blur: () => void;
+        props: Record<string, any>;
     }): any;
     counter?(_: {
         counter: string;
@@ -52,8 +60,24 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_TypeProps
         resetValidation: () => void;
         validate: () => void;
     }): any;
+    "prepend-inner"?(_: {
+        isActive: Ref<boolean>;
+        isFocused: Ref<boolean>;
+        controlRef: Ref<HTMLElement | undefined>;
+        focus: () => void;
+        blur: () => void;
+    }): any;
+    default?(_: {}): any;
 }>;
 export default _default;
+type __VLS_WithDefaults<P, D> = {
+    [K in keyof Pick<P, keyof P>]: K extends keyof D ? __VLS_Prettify<P[K] & {
+        default: D[K];
+    }> : P[K];
+};
+type __VLS_Prettify<T> = {
+    [K in keyof T]: T[K];
+} & {};
 type __VLS_WithTemplateSlots<T, S> = T & {
     new (): {
         $slots: S;

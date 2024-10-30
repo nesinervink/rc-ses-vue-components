@@ -7,11 +7,11 @@
     :tooltip-on-click="fieldTooltipOnClick"
     :for="name"
   >
-    <v-text-field
+    <v-textarea
       v-bind="$attrs"
       id="id"
       v-model="model"
-      class="rc-field rc-text-field"
+      class="rc-field rc-textarea-field"
       variant="outlined"
       :error="!!error"
       :hide-details="!(!!error || !!counter || !!messages)"
@@ -23,7 +23,6 @@
       :name="name"
       :messages="messages"
       :max-width="maxWidth"
-
       :active="active"
       :append-icon="appendIcon"
       :append-inner-icon="appendInnerIcon"
@@ -37,7 +36,6 @@
       :dirty="dirty"
       :flat="flat"
       :focused="focused"
-      :hide-spin-buttons="hideSpinButtons"
       :hint="hint"
       :loading="loading"
       :max-errors="maxErrors"
@@ -50,15 +48,16 @@
       :prepend-icon="prependIcon"
       :prepend-inner-icon="prependInnerIcon"
       :reverse="reverse"
-      :role="role"
       :single-line="singleLine"
       :suffix="suffix"
       :theme="theme"
       :tile="tile"
-      :type="type"
       :validate-on="validateOn"
       :validation-value="validationValue"
       :width="width"
+      :auto-grow="autoGrow"
+      :rows="rows"
+      :max-rows="maxRows"
     >
       <template v-if="$slots['append']" #append="binds">
         <slot name="append" v-bind="binds" />
@@ -83,23 +82,23 @@
       </template>
 
       <slot name="default" />
-    </v-text-field>
+    </v-textarea>
   </RcSesFieldWrapper>
 </template>
 
 <script setup lang="ts">
 import { watch } from 'vue'
-import { VTextField } from 'vuetify/components/VTextField'
+import { VTextarea } from 'vuetify/components/VTextarea'
 
 import RcSesFieldWrapper from '@/components/common/inputs/FieldWrapper/RcSesFieldWrapper.vue'
-import TextFieldDefaults from '@/components/common/inputs/TextField/defaults'
-import { TextFieldProps } from '@/components/common/inputs/TextField/type'
+
+import { TextAreaFieldProps } from './type'
 
 defineOptions({
   inheritAttrs: false,
 })
 
-const props = withDefaults(defineProps<TextFieldProps>(), TextFieldDefaults)
+const props = withDefaults(defineProps<TextAreaFieldProps>(), {})
 
 const model = defineModel<any>()
 

@@ -4,6 +4,7 @@
     :description="fieldDescription"
     :tooltip="fieldTooltip"
     :tooltip-title="fieldTooltipTitle"
+    :tooltip-on-click="fieldTooltipOnClick"
     :for="name"
   >
     <RcSesFileDropzone v-model="model" v-bind="props" />

@@ -1,18 +1,21 @@
+import { TooltipProps } from './type';
 import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, ComponentPublicInstance, PropType } from 'vue';
 
-interface TooltipProps {
-    title?: string;
-    description?: string;
-}
 declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToOption<TooltipProps>, {
     title: undefined;
     description: undefined;
+    maxWidth: number;
+    contained: boolean;
 }>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToOption<TooltipProps>, {
     title: undefined;
     description: undefined;
+    maxWidth: number;
+    contained: boolean;
 }>>>, {
     title: string;
+    maxWidth: string | number;
     description: string;
+    contained: boolean;
 }, {}>, {
     activator?(_: {
         isActive: boolean;

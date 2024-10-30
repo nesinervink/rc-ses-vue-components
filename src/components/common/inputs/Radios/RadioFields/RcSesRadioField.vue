@@ -6,6 +6,7 @@
     :description="fieldDescription"
     :tooltip="fieldTooltip"
     :tooltip-title="fieldTooltipTitle"
+    :tooltip-on-click="fieldTooltipOnClick"
     :for="name"
     :variant="variant"
   >
