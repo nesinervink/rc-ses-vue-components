@@ -105,8 +105,6 @@ export function createRcSesComponents(options: object = {}): Plugin<[]> {
 
     app.component('RcSesTimePickerField', RcSesTimePickerField)
 
-    app.component('RcSesTimePickerField', RcSesTimePickerField)
-
     app.component('RcSesTable', RcSesTable)
     app.component('RcSesTab', RcSesTab)
     app.component('RcSesTooltip', RcSesTooltip)
