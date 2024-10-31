@@ -1,6 +1,8 @@
 import type { App, Plugin } from 'vue'
+import 'vuetify/styles'
 
 import RcSesAccordion from '@/components/common/Accordion/RcSesAccordion.vue'
+import useAccordionController from '@/components/common/Accordion/hooks/useAccordionController'
 import RcSesAlert from '@/components/common/Alert/RcSesAlert.vue'
 import RcSesError from '@/components/common/Error/RcSesError.vue'
 import RcSesButton from '@/components/common/buttons/Button/RcSesButton.vue'
@@ -37,6 +39,7 @@ import RcSesFormTabContainer from '@/components/layouts/FormTabContainer/RcSesFo
 import RcSesHeader from '@/components/layouts/Header/RcSesHeader.vue'
 import createRcSesVuetify from '@/plugins/vuetify'
 import '@/styles/shared/index.scss'
+import type UseFormType from '@/types/forms/UseFormType'
 
 // eslint-disable-next-line symbol-description
 export const globalOptions = Symbol()
@@ -72,7 +75,8 @@ export function createRcSesComponents(options: object = {}): Plugin<[]> {
     app
       .component('RcSesDatePicker', RcSesDatePicker)
       .component('RcSesDatePickerField', RcSesDatePickerField)
-      .component('RcSesTimePickerField', RcSesTimePickerField)
+
+    app.component('RcSesTimePickerField', RcSesTimePickerField)
 
     app
       .component('RcSesFileInput', RcSesFileInput)
@@ -103,8 +107,6 @@ export function createRcSesComponents(options: object = {}): Plugin<[]> {
     app.component('RcSesTextField', RcSesTextField)
     app.component('RcSesTextareaField', RcSesTextareaField)
 
-    app.component('RcSesTimePickerField', RcSesTimePickerField)
-
     app.component('RcSesTable', RcSesTable)
     app.component('RcSesTab', RcSesTab)
     app.component('RcSesTooltip', RcSesTooltip)
@@ -126,16 +128,18 @@ export {
 export { RcSesAlert, RcSesButton }
 export { RcSesCheckbox, RcSesCheckboxField }
 export { RcSesFileInput, RcSesFileInputField }
-export { RcSesDatePicker, RcSesDatePickerField }
+export { RcSesDatePicker, RcSesDatePickerField, RcSesTimePickerField }
 export { RcSesNumberStepper, RcSesNumberStepperField }
 export { RcSesPhoneField }
 export { RcSesRadio, RcSesRadioButtonsField, RcSesRadioField }
 export { RcSesSearchableArea, RcSesSelectField, RcSesSearchField }
 export { RcSesTextField, RcSesTextareaField }
-export { RcSesAccordion }
+export { RcSesAccordion, useAccordionController }
 export { RcSesError, RcSesFormControl }
 export { RcSesFileDropzone, RcSesFileDropzoneField }
 export { RcSesSearchableField }
 export { RcSesTable }
 export { RcSesTab }
 export { RcSesTooltip }
+
+export { UseFormType }
