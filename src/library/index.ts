@@ -1,4 +1,5 @@
 import type { App, Plugin } from 'vue'
+import 'vuetify/styles'
 
 import RcSesAccordion from '@/components/common/Accordion/RcSesAccordion.vue'
 import useAccordionController from '@/components/common/Accordion/hooks/useAccordionController'
