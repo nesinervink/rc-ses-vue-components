@@ -1,4 +1,4 @@
-@use '../../../../styles/vuetify/settings.scss';
+@use '/src/styles/vuetify/settings.scss';
 
 .rc-field-wrapper {
   position: relative;
@@ -44,7 +44,7 @@
   @media #{map-get(settings.$display-breakpoints, 'md-and-up')} {
     flex-direction: row;
 
-    .rc-tooltip-label-icon {
+    .rc-tooltip--label-icon {
       display: none;
     }
 

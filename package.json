@@ -7,6 +7,7 @@
   "private": false,
   "main": "./dist/registrucentras-rc-ses-vue-components.cjs",
   "module": "./dist/registrucentras-rc-ses-vue-components.js",
+  "types": "./dist/library/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/library/index.d.ts",
@@ -20,7 +21,10 @@
       "require": "./dist/registrucentras-rc-ses-vue-components2.cjs",
       "default": "./dist/registrucentras-rc-ses-vue-components2.cjs"
     },
-    "./vuetify/settings.scss": "./src/styles/vuetify/settings.scss",
+    "./vuetify/settings.scss": {
+      "import": "./dist/styles/vuetify/settings.scss",
+      "require": "./dist/styles/vuetify/settings.scss"
+    },
     "./package.json": "./package.json"
   },
   "files": [
