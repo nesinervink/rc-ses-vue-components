@@ -1,6 +1,5 @@
-@use '../../../styles/vuetify/settings.scss';
+@use '/src/styles/vuetify/settings.scss';
 
-// rc-service-form-tab-container
 .rcs-ft-container {
   border: 1px solid rgba(var(--v-theme-grey-400));
   padding: 0;

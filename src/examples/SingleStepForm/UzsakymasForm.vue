@@ -130,18 +130,6 @@
         />
       </Field>
 
-      <Field v-slot="fieldProps" name="laikas">
-        <RcSesTimepickerField
-          v-bind="fieldProps.field"
-          :error="fieldProps.errorMessage"
-          field-label="Laikas"
-          class="form-control"
-          :max-width="300"
-          placeholder="Pasirinkite laiką"
-          name="laikas"
-        />
-      </Field>
-
       <Field v-slot="fieldProps" name="skaicius">
         <RcSesNumberStepperField
           v-bind="fieldProps.field"
@@ -290,7 +278,7 @@
 
 <script setup lang="ts">
 import { toTypedSchema } from '@vee-validate/yup'
-import { Field, Form as VeeForm, useForm } from 'vee-validate'
+import { configure, Field, Form as VeeForm, useForm } from 'vee-validate'
 import * as yup from 'yup'
 
 import RcSesCheckboxField from '@/components/common/inputs/Checkboxes/CheckboxField/RcSesCheckboxField.vue'
@@ -307,6 +295,13 @@ import RcSesTextField from '@/components/common/inputs/TextField/RcSesTextField.
 import RcSesTimepickerField from '@/components/common/inputs/TimePickerField/RcSesTimePickerField.vue'
 import RcSesTooltip from '@/components/common/tooltip/RcSesTooltip.vue'
 import SearchModal from '@/examples/modals/SearchModal.vue'
+
+configure({
+  validateOnBlur: true,
+  validateOnChange: true,
+  validateOnInput: false,
+  validateOnModelUpdate: false,
+});
 
 const FormSchema = yup.object({
   trumpas: yup.string().required(),
@@ -331,6 +326,7 @@ const FormSchema = yup.object({
 
 useForm({
   validationSchema: toTypedSchema(FormSchema),
+  validateOnMount: false,
 })
 
 function onSubmit(values) {
