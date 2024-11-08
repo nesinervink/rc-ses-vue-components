@@ -1,5 +1,5 @@
-@use '../../../../styles/vuetify/settings.scss';
-@import '../../../../styles/shared/mixins/makeFocus';
+@use '/src/styles/vuetify/settings.scss';
+@import '/src/styles/shared/mixins/makeFocus';
 
 @mixin make-color($color, $hover, $active, $textColor: 950, $haTextColor: null) {
   &.text-#{$color} {

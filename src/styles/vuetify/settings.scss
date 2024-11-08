@@ -1,5 +1,5 @@
-@use 'typography' as *;
-@use 'variables' as var;
+@use '/src/styles/vuetify/typography' as *;
+@use '/src/styles/vuetify/variables' as var;
 
 @forward 'vuetify/settings' with (
   $body-font-family: var.$body-font-family,

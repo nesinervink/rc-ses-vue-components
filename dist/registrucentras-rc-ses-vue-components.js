@@ -4220,7 +4220,7 @@ const mn = un(Ue, 16), fn = {
 }), Sn = Symbol();
 function ra(a = {}) {
   return { install: (o) => {
-    o.provide(Sn, a), o.component("RcSesHeader", wt).component("RcSesFieldWrapper", J).component("RcSesFormContainer", Vt).component("RcSesTabFormContainer", St).component("RcSesFormStepper", no).component("RcSesFormActions", Le), o.component("RcSesAccordion", rl), o.component("RcSesError", ve).component("RcSesFormControl", yl), o.component("RcSesAlert", dl), o.component("RcSesButton", Xe), o.component("RcSesCheckbox", Qe), o.component("RcSesCheckboxField", Vl), o.component("RcSesDatePicker", Ye).component("RcSesDatePickerField", Sl), o.component("RcSesTimePickerField", ct), o.component("RcSesFileInput", xe).component("RcSesFileInputField", Al), o.component("RcSesFileDropzone", _e).component("RcSesFileDropzoneField", Bl), o.component("RcSesNumberStepper", eo).component("RcSesNumberStepperField", Ll), o.component("RcSesPhoneField", Jl), o.component("RcSesRadio", to).component("RcSesRadioField", et).component("RcSesRadioButtonsField", Yl), o.component("RcSesSearchableArea", Ae).component("RcSesSearchField", lo).component("RcSesSearchableField", ot), o.component("RcSesSelectField", at), o.component("RcSesTextField", he), o.component("RcSesTextareaField", it), o.component("RcSesTable", ut), o.component("RcSesTab", ft), o.component("RcSesTooltip", Fe);
+    o.provide(Sn, a), o.component("RcSesHeader", wt).component("RcSesFieldWrapper", J).component("RcSesFormContainer", Vt).component("RcSesTabFormContainer", St).component("RcSesFormStepper", no).component("RcSesFormActions", Le), o.component("RcSesAccordion", rl), o.component("RcSesError", ve).component("RcSesFormControl", yl), o.component("RcSesAlert", dl), o.component("RcSesButton", Xe), o.component("RcSesCheckbox", Qe), o.component("RcSesCheckboxField", Vl), o.component("RcSesDatePicker", Ye).component("RcSesDatePickerField", Sl), o.component("RcSesTimePickerField", ct), o.component("RcSesFileInput", xe).component("RcSesFileInputField", Al), o.component("RcSesFileDropzone", _e).component("RcSesFileDropzoneField", Bl), o.component("RcSesNumberStepper", eo).component("RcSesNumberStepperField", Ll), o.component("RcSesPhoneField", Jl), o.component("RcSesRadio", to).component("RcSesRadioField", et).component("RcSesRadioButtonsField", Yl), o.component("RcSesSearchableArea", Ae).component("RcSesSearchField", lo).component("RcSesSearchableField", ot), o.component("RcSesSelectField", at), o.component("RcSesTextField", he), o.component("RcSesTextAreaField", it), o.component("RcSesTable", ut), o.component("RcSesTab", ft), o.component("RcSesTooltip", Fe);
   } };
 }
 export {
@@ -4255,8 +4255,8 @@ export {
   at as RcSesSelectField,
   ft as RcSesTab,
   ut as RcSesTable,
+  it as RcSesTextAreaField,
   he as RcSesTextField,
-  it as RcSesTextareaField,
   ct as RcSesTimePickerField,
   Fe as RcSesTooltip,
   ra as createRcSesComponents,

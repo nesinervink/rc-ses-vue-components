@@ -26,7 +26,7 @@ import RcSesSearchField from '@/components/common/inputs/SearchField/RcSesSearch
 import RcSesSearchableArea from '@/components/common/inputs/SearchableArea/RcSesSearchableArea.vue'
 import RcSesSearchableField from '@/components/common/inputs/SearchableField/RcSesSearchableField.vue'
 import RcSesSelectField from '@/components/common/inputs/SelectField/RcSesSelectField.vue'
-import RcSesTextareaField from '@/components/common/inputs/TextAreaField/RcSesTextAreaField.vue'
+import RcSesTextAreaField from '@/components/common/inputs/TextAreaField/RcSesTextAreaField.vue'
 import RcSesTextField from '@/components/common/inputs/TextField/RcSesTextField.vue'
 import RcSesTimePickerField from '@/components/common/inputs/TimePickerField/RcSesTimePickerField.vue'
 import RcSesTable from '@/components/common/tables/table/RcSesTable.vue'
@@ -105,7 +105,7 @@ export function createRcSesComponents(options: object = {}): Plugin<[]> {
     app.component('RcSesSelectField', RcSesSelectField)
 
     app.component('RcSesTextField', RcSesTextField)
-    app.component('RcSesTextareaField', RcSesTextareaField)
+    app.component('RcSesTextAreaField', RcSesTextAreaField)
 
     app.component('RcSesTable', RcSesTable)
     app.component('RcSesTab', RcSesTab)
@@ -133,7 +133,7 @@ export { RcSesNumberStepper, RcSesNumberStepperField }
 export { RcSesPhoneField }
 export { RcSesRadio, RcSesRadioButtonsField, RcSesRadioField }
 export { RcSesSearchableArea, RcSesSelectField, RcSesSearchField }
-export { RcSesTextField, RcSesTextareaField }
+export { RcSesTextField, RcSesTextAreaField }
 export { RcSesAccordion, useAccordionController }
 export { RcSesError, RcSesFormControl }
 export { RcSesFileDropzone, RcSesFileDropzoneField }
@@ -141,5 +141,4 @@ export { RcSesSearchableField }
 export { RcSesTable }
 export { RcSesTab }
 export { RcSesTooltip }
-
-export { UseFormType }
+export type { UseFormType }
