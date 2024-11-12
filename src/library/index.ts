@@ -141,5 +141,8 @@ export { RcSesSearchableField }
 export { RcSesTable }
 export { RcSesTab }
 export { RcSesTooltip }
-
 export type { UseFormType }
+
+export * from '@/assets/icons/regular'
+export * from '@/assets/icons/filled'
+

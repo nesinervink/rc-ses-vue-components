@@ -1,16 +1,16 @@
 <template>
-  <v-container class="rc-container rc-container-center d-flex">
-    <div
-      v-if="showProgressStepper"
-      class="rc-form-stepper d-none d-md-flex"
-      style="flex-grow: 1"
-    >
+  <v-container
+    class="rc-container rc-container-center d-flex"
+    :class="[!!props.maxWidth ? `rc-container-max-${props.maxWidth}` : '']"
+  >
+    <div v-if="showProgressStepper" class="rc-form-stepper d-none d-md-flex">
       <RcSesFormStepper
         v-if="showProgressStepper"
         :items="state"
         style="margin-top: 2.875rem"
       ></RcSesFormStepper>
     </div>
+
     <div class="rc-container-content">
       <div class="rc-form-wrapper">
         <div v-if="computedAccordionControlsVisible" class="rc-form-actions">
@@ -27,8 +27,6 @@
             Suskleisti visus
           </v-btn>
         </div>
-
-        <!-- Default CONTENT goes here         -->
         <slot />
       </div>
 

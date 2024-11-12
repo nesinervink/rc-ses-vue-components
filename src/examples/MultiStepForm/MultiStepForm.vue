@@ -5,6 +5,7 @@
       :form-controller="formController"
       :show-progress-stepper="true"
       :show-accordion-collapse-controls="true"
+      max-width="lg"
     >
       <template #actions>
         <FormActions />

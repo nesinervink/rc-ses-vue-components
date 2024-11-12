@@ -27,11 +27,10 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, './src/library/index.ts'),
-        icons: path.resolve(__dirname, './src/library/icons.ts'),
       },
       external: [
-        ...Object.keys(pkg.dependencies || {}),
-        /^vuetify($|\/.+)/,
+        ...Object.keys(pkg.dependencies || []),
+        ...Object.keys(pkg.peerDependencies || []),
       ],
       output: {
         exports: 'named',
@@ -58,12 +57,13 @@ export default defineConfig({
     }),
     vuetify({
       autoImport: true,
-      styles: 'none',
+      styles: {
+        configFile: 'src/styles/vuetify/settings.scss'
+      },
     }),
     cssInjectedByJsPlugin({
-      topExecutionPriority: false,
-      relativeCSSInjection: true,
-      jsAssetsFilterFunction: (outputChunk) => outputChunk.name === 'main',
+      topExecutionPriority: true,
+      relativeCSSInjection: false,
     }),
 		viteStaticCopy({
 			targets: [

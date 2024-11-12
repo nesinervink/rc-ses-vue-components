@@ -32,6 +32,7 @@ const createRcSesVuetify = (): ReturnType<typeof createVuetify> =>
         rc: rcIcons,
       },
     },
+    ssr: false,
   })
 
 export default createRcSesVuetify
