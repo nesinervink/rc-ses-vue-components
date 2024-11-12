@@ -1,5 +1,9 @@
 <template>
-  <RcSesFormContainer :accordion-controller="accordionController" single-form>
+  <RcSesFormContainer
+    :accordion-controller="accordionController"
+    max-width="md"
+    single-form
+  >
     <template #actions>
       <FormActions />
     </template>

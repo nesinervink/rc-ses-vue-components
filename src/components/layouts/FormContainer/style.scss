@@ -1,5 +1,17 @@
 @use '/src/styles/vuetify/settings.scss';
 
+.rc-container {
+  column-gap: 3.75rem;
+}
+
+.rc-form-stepper {
+  flex: 0 0 270px;
+}
+
+.rc-container-content {
+  flex-grow: 1;
+}
+
 .rc-form-wrapper {
 
   .rc-form-actions {
