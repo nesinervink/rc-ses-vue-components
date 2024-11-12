@@ -6,4 +6,5 @@ export type FormContainerProps = {
     formController?: ReturnType<typeof useForm>;
     showAccordionCollapseControls?: boolean;
     showProgressStepper?: boolean;
+    maxWidth?: 'md' | 'lg' | 'xl';
 };

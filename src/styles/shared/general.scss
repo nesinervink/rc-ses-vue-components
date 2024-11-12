@@ -4,12 +4,9 @@ body {
   font-size: 0.9375rem;
 }
 
-.v-container {
-  max-width: 1200px;
-}
-
 .rc-container {
   background-color: rgba(var(--v-theme-grey-100));
+  max-width: 1218px;
   padding-bottom: 0;
   padding-top: 0;
   padding-left: 0;
@@ -30,10 +27,23 @@ body {
     padding-top: 3rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
 
-    .rc-container-content {
-      max-width: 840px;
-      width: 100%;
+  &.rc-container-max-md {
+    @media #{map-get(settings.$display-breakpoints, 'md-and-up')} {
+        max-width: 888px;
+    }
+  }
+
+  &.rc-container-max-lg {
+    @media #{map-get(settings.$display-breakpoints, 'lg-and-up')} {
+        max-width: 1218px;
+    }
+  }
+
+  &.rc-container-max-xl {
+    @media #{map-get(settings.$display-breakpoints, 'lg-and-up')} {
+      max-width: 1600px;
     }
   }
 }
