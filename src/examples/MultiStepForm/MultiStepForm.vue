@@ -7,6 +7,14 @@
       :show-accordion-collapse-controls="true"
       max-width="lg"
     >
+      <template #form-stepper="{ state }">
+        <RcSesFormStepper
+          class="custom-stepper"
+          :items="state"
+          style="margin-top: 2.875rem"
+        ></RcSesFormStepper>
+      </template>
+
       <template #actions>
         <FormActions />
       </template>
@@ -44,6 +52,7 @@ import * as yup from 'yup'
 import RcSesAccordion from '@/components/common/Accordion/RcSesAccordion.vue'
 import useAccordionController from '@/components/common/Accordion/hooks/useAccordionController'
 import RcSesFormContainer from '@/components/layouts/FormContainer/RcSesFormContainer.vue'
+import RcSesFormStepper from '@/components/layouts/FormStepper/RcSesFormStepper.vue'
 import IsdavimasForm from '@/examples/MultiStepForm/components/IsdavimasForm.vue'
 import PapildomosPaslaugosForm from '@/examples/MultiStepForm/components/PapildomosPaslaugosForm.vue'
 import PaslaugosUzsakymasForm from '@/examples/MultiStepForm/components/PaslaugosUzsakymasForm.vue'
@@ -71,6 +80,9 @@ const accordionController = useAccordionController({
     expanded: true,
     state: 'active',
     title: 'Paslaugos užsakymas',
+    onClick: (item) => {
+      console.log('serviceForm clicked', item)
+    },
   },
   termsForm: {
     expanded: false,

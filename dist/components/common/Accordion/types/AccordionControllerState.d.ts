@@ -3,6 +3,7 @@ export type AccordionState = {
     expanded?: boolean | undefined;
     state: 'active' | 'completed' | 'error' | 'pending';
     title: string;
+    onClick?: (item: AccordionState) => void;
 };
 export type AccordionProps = {
     id: string;

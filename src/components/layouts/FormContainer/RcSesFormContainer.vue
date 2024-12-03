@@ -4,11 +4,9 @@
     :class="[!!props.maxWidth ? `rc-container-max-${props.maxWidth}` : '']"
   >
     <div v-if="showProgressStepper" class="rc-form-stepper d-none d-md-flex">
-      <RcSesFormStepper
-        v-if="showProgressStepper"
-        :items="state"
-        style="margin-top: 2.875rem"
-      ></RcSesFormStepper>
+      <slot name="form-stepper" v-bind="{ state }">
+        <RcSesFormStepper :items="state" style="margin-top: 2.875rem"></RcSesFormStepper>
+      </slot>
     </div>
 
     <div class="rc-container-content">
