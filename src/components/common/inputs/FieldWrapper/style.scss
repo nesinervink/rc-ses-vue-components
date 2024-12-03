@@ -7,6 +7,14 @@
   // align-items: flex-start;
   width: 100%;
 
+  .rc-tooltip-mobile {
+    display: inline-flex;
+  }
+
+  .rc-tooltip-desktop {
+    display: none;
+  }
+
   .rc-field-labels {
     display: flex;
     flex-direction: column;
@@ -30,10 +38,6 @@
       border-radius: 4px;
       border: 1px solid rgb(var(--v-theme-grey-500));
     }
-
-    .rc-tooltip-input-icon {
-      display: none;
-    }
   }
 
   .rc-input-error {
@@ -44,8 +48,16 @@
   @media #{map-get(settings.$display-breakpoints, 'md-and-up')} {
     flex-direction: row;
 
-    .rc-tooltip--label-icon {
+    .rc-tooltip-mobile {
       display: none;
+    }
+
+    .rc-tooltip-desktop {
+      display: inline-flex;
+      position: absolute;
+      flex: 0 0 1rem;
+      top: 0.9rem;
+      right: -1.5rem;
     }
 
     .rc-field-labels {
@@ -69,16 +81,6 @@
 
       label {
         display: inline-block;
-      }
-    }
-
-    .rc-field-content {
-      .rc-tooltip-input-icon {
-        display: flex;
-        position: absolute;
-        flex: 0 0 1rem;
-        top: 0.9rem;
-        right: -1.5rem;
       }
     }
   }

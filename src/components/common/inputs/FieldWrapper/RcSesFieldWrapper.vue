@@ -12,6 +12,7 @@
 
         <RcSesTooltip
           v-if="tooltip"
+          icon-class="rc-tooltip-mobile"
           :title="tooltipTitle"
           :description="tooltip"
           location="top"
@@ -23,7 +24,7 @@
               v-bind="activator.props"
               icon="$tooltip"
               size="small"
-              class="rc-tooltip-label-icon ml-2"
+              class="rc-tooltip-label-icon rc-tooltip-mobile ml-2"
             />
           </template>
         </RcSesTooltip>
@@ -36,6 +37,7 @@
         {{ description }}
       </label>
     </div>
+
     <div
       class="rc-field-content"
       :class="{ 'rc-field-content--variant-outlined': variant === 'outlined' }"
@@ -43,6 +45,7 @@
       <slot />
       <RcSesTooltip
         v-if="tooltip"
+        icon-class="rc-tooltip-desktop"
         :title="tooltipTitle"
         :description="tooltip"
         :open-on-click="tooltipOnClick"
@@ -53,7 +56,7 @@
             v-bind="activator.props"
             icon="$tooltip"
             size="small"
-            class="rc-tooltip-input-icon ml-2"
+            class="rc-tooltip-input-icon rc-tooltip-desktop ml-2"
           />
         </template>
       </RcSesTooltip>
