@@ -1,9 +1,12 @@
 import { FormContainerProps } from './type';
 import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, Ref, PropType } from 'vue';
-import { FormContext, GenericObject } from 'vee-validate';
 import { AccordionControllerState } from '../../common/Accordion/types/AccordionControllerState';
+import { FormContext, GenericObject } from 'vee-validate';
 
 declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_TypePropsToOption<FormContainerProps>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_TypePropsToOption<FormContainerProps>>>, {}, {}>, {
+    "form-stepper"?(_: {
+        state: AccordionControllerState;
+    }): any;
     default?(_: {}): any;
     "actions-wrapper"?(_: {
         formController: FormContext<GenericObject, GenericObject> | undefined;
