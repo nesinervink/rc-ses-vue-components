@@ -3,6 +3,7 @@ export type AccordionState = {
   expanded?: boolean | undefined
   state: 'active' | 'completed' | 'error' | 'pending'
   title: string
+  onClick?: (item: AccordionState) => void
 }
 
 // Same as state only all props are optional!

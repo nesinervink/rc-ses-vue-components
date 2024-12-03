@@ -24,6 +24,8 @@
     class="rc-datepicker"
     :class="{ 'rc-datepicker--range': range }"
     @update:model-value="handleChange"
+    @date-update="selectDate"
+    @range-end="selectDate"
   >
     <template #dp-input="inputBind">
       <RcSesTextField
@@ -57,24 +59,20 @@
       </RcSesTextField>
     </template>
 
-    <template
-      #month-year="{ month, year, months, updateMonthYear, handleMonthYearChange }"
-    >
+    <template #month-year="{ month, year, months, updateMonthYear }">
       <v-icon
         class="rc-datepicker-prev-icon"
         icon="rc-caret-double-left-bold"
         size="16"
         color="grey"
-        @click="handleMonthYearChange && handleMonthYearChange(false, true)"
+        @click="handleMonthYearChange(month, year - 1, updateMonthYear)"
       />
       <v-icon
         class="rc-datepicker-prev-icon"
         icon="rc-caret-left-bold"
         size="16"
         color="grey"
-        @click="
-          updateMonthYear && month !== undefined && updateMonthYear(month - 1, year, true)
-        "
+        @click="handleMonthYearChange((month ?? 0) - 1, year, updateMonthYear)"
       />
       <div class="text-body-1 flex-grow-1 text-center font-weight-strong">
         {{
@@ -87,16 +85,14 @@
         icon="rc-caret-right-bold"
         size="16"
         color="grey"
-        @click="
-          updateMonthYear && month !== undefined && updateMonthYear(month + 1, year, true)
-        "
+        @click="handleMonthYearChange((month ?? 0) + 1, year, updateMonthYear)"
       />
       <v-icon
         class="rc-datepicker-next-icon"
         icon="rc-caret-double-right-bold"
         size="16"
         color="grey"
-        @click="handleMonthYearChange && handleMonthYearChange(true, true)"
+        @click="handleMonthYearChange(month, year + 1, updateMonthYear)"
       />
     </template>
 
@@ -130,7 +126,7 @@
 
     <template #action-buttons>
       <v-btn variant="text" color="primary" @click="closeDatepicker"> Uždaryti </v-btn>
-      <v-btn color="primary" @click="selectDate">Gerai</v-btn>
+      <!-- <v-btn color="primary" @click="selectDate">Gerai</v-btn> -->
     </template>
   </DatePicker>
 </template>
@@ -138,7 +134,7 @@
 <script setup lang="ts">
 import DatePicker from '@vuepic/vue-datepicker'
 import '@vuepic/vue-datepicker/dist/main.css'
-import { ref, watch } from 'vue'
+import { nextTick, ref, watch } from 'vue'
 
 import XCircleFilledIcon from '@/assets/icons/filled/XCircleFilledIcon.vue'
 import { DatePickerProps } from '@/components/common/inputs/Datepickers/DatePicker/types'
@@ -188,15 +184,34 @@ const formatPreview = (
   return 'Invalid date format'
 }
 
+const handleMonthYearChange = (month?: number, year?: number, updateMonthYear?: any) => {
+  if (!updateMonthYear || month === undefined || year === undefined) {
+    return
+  }
+
+  if (month < 0) {
+    updateMonthYear(11, year - 1, true)
+  } else if (month > 11) {
+    updateMonthYear(0, year + 1, true)
+  } else {
+    updateMonthYear(month, year, true)
+  }
+}
+
 const handleChange = (value: any) => {
   modelValue.value = value
   displayValue.value = ''
+  // console.log('handleChange', value)
 }
 
 const selectDate = () => {
-  if (datepickerRef.value) {
-    datepickerRef.value.selectDate()
+  if (!datepickerRef.value) {
+    return
   }
+
+  nextTick(() => {
+    datepickerRef.value.selectDate()
+  })
 }
 
 const closeDatepicker = () => {

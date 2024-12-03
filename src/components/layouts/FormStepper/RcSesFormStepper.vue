@@ -23,7 +23,11 @@
           :class="{
             'text-h6': step.state === 'active',
             'text-body-2': step.state !== 'active',
+            'rc-clickable': !!step.onClick,
           }"
+          :type="step.onClick ? 'button' : 'div'"
+          @click="step.onClick?.(step)"
+          @keydown.enter="() => {}"
         >
           {{ step.title }}
         </div>

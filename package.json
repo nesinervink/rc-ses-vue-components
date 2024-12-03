@@ -1,7 +1,7 @@
 {
   "name": "@registrucentras/rc-ses-vue-components",
   "author": "VĮ REGISTRŲ CENTRAS",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "RC SES Vue.js komponentų biblioteka",
   "type": "module",
   "private": false,
@@ -44,7 +44,6 @@
     "uuid": "^10.0.0",
     "vee-validate": "^4.13.2",
     "vite-plugin-css-injected-by-js": "^3.5.1",
-    "vue-component-type-helpers": "^2.0.21",
     "yup": "^1.4.0"
   },
   "peerDependencies": {
@@ -97,7 +96,6 @@
     "storybook": "^8.2.6",
     "typescript": "^5.4.5",
     "typescript-eslint": "^7.12.0",
-    "unplugin-fonts": "^1.1.1",
     "vite": "^5.1.5",
     "vite-plugin-dts": "^4.0.0-beta.1",
     "vite-plugin-static-copy": "^1.0.6",
