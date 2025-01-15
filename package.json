@@ -1,7 +1,7 @@
 {
   "name": "@registrucentras/rc-ses-vue-components",
   "author": "VĮ REGISTRŲ CENTRAS",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "RC SES Vue.js komponentų biblioteka",
   "type": "module",
   "private": false,
@@ -96,6 +96,7 @@
     "storybook": "^8.2.6",
     "typescript": "^5.4.5",
     "typescript-eslint": "^7.12.0",
+    "unplugin-fonts": "^1.3.1",
     "vite": "^5.1.5",
     "vite-plugin-dts": "^4.0.0-beta.1",
     "vite-plugin-static-copy": "^1.0.6",
