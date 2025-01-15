@@ -4540,7 +4540,9 @@ const ln = T({
       "error-messages": l.error,
       readonly: l.readonly,
       placeholder: l.placeholder,
-      label: l.label
+      label: l.label,
+      "true-value": l.trueValue,
+      "false-value": l.falseValue
     }, st({ _: 2 }, [
       l.$slots.label ? {
         name: "label",
@@ -4551,7 +4553,7 @@ const ln = T({
         ]),
         key: "0"
       } : void 0
-    ]), 1032, ["modelValue", "class", "name", "color", "disabled", "hide-details", "error", "error-messages", "readonly", "placeholder", "label"]));
+    ]), 1032, ["modelValue", "class", "name", "color", "disabled", "hide-details", "error", "error-messages", "readonly", "placeholder", "label", "true-value", "false-value"]));
   }
 }), Nr = Z()({
   name: "VCardActions",
@@ -6523,7 +6525,9 @@ const Zd = T({
               "onUpdate:modelValue": n[0] || (n[0] = (l) => a.value = l)
             }, t.$attrs, {
               label: t.label,
-              error: void 0
+              error: void 0,
+              "true-value": t.trueValue,
+              "false-value": t.falseValue
             }), st({ _: 2 }, [
               t.$slots.label ? {
                 name: "label",
@@ -6534,7 +6538,7 @@ const Zd = T({
                 ]),
                 key: "0"
               } : void 0
-            ]), 1040, ["modelValue", "label"])
+            ]), 1040, ["modelValue", "label", "true-value", "false-value"])
           ]),
           _: 3
         }),
