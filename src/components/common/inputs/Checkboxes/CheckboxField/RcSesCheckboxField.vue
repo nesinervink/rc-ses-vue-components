@@ -10,7 +10,14 @@
     :for="name"
   >
     <v-card class="bg-grey-50" color="grey" variant="outlined">
-      <RcSesCheckbox v-model="model" v-bind="$attrs" :label="label" :error="undefined">
+      <RcSesCheckbox
+        v-model="model"
+        v-bind="$attrs"
+        :label="label"
+        :error="undefined"
+        :true-value="trueValue"
+        :false-value="falseValue"
+      >
         <template v-if="$slots.label" #label="labelProps">
           <slot name="label" v-bind="labelProps">{{ label }}</slot>
         </template>

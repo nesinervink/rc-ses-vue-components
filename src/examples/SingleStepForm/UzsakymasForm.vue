@@ -173,6 +173,8 @@
           label="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."
           field-label="Sutikimas + tooltip"
           name="sutikimasTooltip"
+          :true-value="'taip'"
+          :false-value="'ne'"
         >
           <template #label="labelProps">
             <span v-bind="labelProps">{{ labelProps.label }}</span>
@@ -317,6 +319,7 @@ const FormSchema = yup.object({
   ieskoti: yup.string().required(),
   data: yup.string().required(),
   sutikimas: yup.boolean().required(),
+  sutikimasTooltip: yup.string().matches(/(taip|ne)/),
   laikotarpis: yup.array().required(),
   laikas: yup.string().required(),
   skaicius: yup.number().required().min(5),
