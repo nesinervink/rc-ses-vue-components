@@ -7462,7 +7462,7 @@ const r0 = ["color", "file", "time", "date", "datetime-local", "week", "month"],
     }, u = (m, h, p) => {
       !p || m === void 0 || h === void 0 || (m < 0 ? p(11, h - 1, !0) : m > 11 ? p(0, h + 1, !0) : p(m, h, !0));
     }, c = (m) => {
-      n.value = m, l.value = "";
+      n.value = m === null ? "" : m, l.value = "";
     }, v = () => {
       t.value && Le(() => {
         t.value.selectDate();
@@ -7620,7 +7620,7 @@ const r0 = ["color", "file", "time", "date", "datetime-local", "week", "month"],
           onClick: C
         }, {
           default: I(() => [
-            Ae(" Uždaryti ")
+            Ae("Uždaryti")
           ]),
           _: 1
         })
