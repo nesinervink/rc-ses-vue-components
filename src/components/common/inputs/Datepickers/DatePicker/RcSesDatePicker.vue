@@ -125,8 +125,7 @@
     </template>
 
     <template #action-buttons>
-      <v-btn variant="text" color="primary" @click="closeDatepicker"> Uždaryti </v-btn>
-      <!-- <v-btn color="primary" @click="selectDate">Gerai</v-btn> -->
+      <v-btn variant="text" color="primary" @click="closeDatepicker">Uždaryti</v-btn>
     </template>
   </DatePicker>
 </template>
@@ -199,7 +198,7 @@ const handleMonthYearChange = (month?: number, year?: number, updateMonthYear?: 
 }
 
 const handleChange = (value: any) => {
-  modelValue.value = value
+  modelValue.value = value === null ? '' : value
   displayValue.value = ''
   // console.log('handleChange', value)
 }
