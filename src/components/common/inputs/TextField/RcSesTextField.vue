@@ -23,7 +23,6 @@
       :name="name"
       :messages="messages"
       :max-width="maxWidth"
-
       :active="active"
       :append-icon="appendIcon"
       :append-inner-icon="appendInnerIcon"

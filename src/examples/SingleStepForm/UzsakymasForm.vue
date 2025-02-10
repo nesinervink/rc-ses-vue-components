@@ -280,7 +280,7 @@
 
 <script setup lang="ts">
 import { toTypedSchema } from '@vee-validate/yup'
-import { configure, Field, Form as VeeForm, useForm } from 'vee-validate'
+import { Field, Form as VeeForm, configure, useForm } from 'vee-validate'
 import * as yup from 'yup'
 
 import RcSesCheckboxField from '@/components/common/inputs/Checkboxes/CheckboxField/RcSesCheckboxField.vue'
@@ -303,7 +303,7 @@ configure({
   validateOnChange: true,
   validateOnInput: false,
   validateOnModelUpdate: false,
-});
+})
 
 const FormSchema = yup.object({
   trumpas: yup.string().required(),

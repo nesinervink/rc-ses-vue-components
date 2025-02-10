@@ -44,5 +44,3 @@ export type FileInputProps = InputProps & {
   validationValue?: VFileInput['$props']['validationValue']
   width?: VFileInput['$props']['width']
 }
-
-
