@@ -7,6 +7,7 @@
     :tooltip-title="fieldTooltipTitle"
     :tooltip-on-click="fieldTooltipOnClick"
     :for="name"
+    :required="required"
   >
     <v-select
       ref="selectRef"

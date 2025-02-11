@@ -9,6 +9,7 @@
     :tooltip-on-click="fieldTooltipOnClick"
     :for="name"
     :variant="variant"
+    :required="required"
   >
     <v-radio-group
       v-model="model"

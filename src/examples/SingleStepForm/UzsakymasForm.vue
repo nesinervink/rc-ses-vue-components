@@ -12,6 +12,7 @@
           placeholder="Tekstas"
           messages="Lorem Ipsum is simply dummy text."
           counter="10"
+          required
         ></RcSesTextField>
       </Field>
 
@@ -29,6 +30,7 @@
           placeholder="Tekstas"
           messages="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard."
           counter="300"
+          required
         ></RcSesTextAreaField>
       </Field>
 
@@ -42,6 +44,7 @@
           placeholder="Pasirinkite"
           :searchable="true"
           :multiple="true"
+          required
           :items="[
             {
               title: 'Tikslas 1',
@@ -70,6 +73,7 @@
           class="form-control"
           default-iso="lt"
           name="telefonas"
+          required
         />
       </Field>
 
@@ -83,6 +87,7 @@
           class="form-control"
           :modal-component="SearchModal"
           name="ieskoti"
+          required
         />
       </Field>
 
@@ -95,6 +100,7 @@
           :max-width="150"
           placeholder="Data"
           name="data"
+          required
         />
       </Field>
 
@@ -108,6 +114,7 @@
           :max-width="300"
           placeholder="Pradžia  →  Pabaiga"
           name="laikotarpis"
+          required
         >
           <template #append-inner>
             <RcSesTooltip
@@ -127,6 +134,7 @@
           :max-width="300"
           placeholder="Pasirinkite laiką"
           name="laikas"
+          required
         />
       </Field>
 
@@ -138,6 +146,7 @@
           field-label="Skaičius"
           :max-width="300"
           name="skaicius"
+          required
         >
           <template #append-inner>
             <RcSesTooltip
@@ -160,6 +169,7 @@
           label="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."
           field-label="Sutikimas"
           name="sutikimas"
+          required
         />
       </Field>
 
@@ -234,6 +244,7 @@
           }"
           class="pa-2"
           name="radioPasirinkimas"
+          required
           :options="[
             { value: 'p1', label: 'Pasirinkimas #1' },
             { value: 'p2', label: 'Pasirinkimas #2' },
@@ -253,6 +264,7 @@
           }"
           field-label="Pasirinkimas"
           name="radioButtonsPasirinkimas"
+          required
           :options="[
             { value: 'p1', label: 'Pasirinkimas #1' },
             { value: 'p2', label: 'Pasirinkimas #2' },
@@ -268,6 +280,7 @@
           :error="fieldProps.errorMessage"
           field-label="Įkelti dokumentus"
           field-description="Tinkami formatai: .doc, .xdoc, .pdf, .pages"
+          required
           name="files"
           multiple
           accept="image/*"

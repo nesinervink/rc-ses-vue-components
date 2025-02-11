@@ -8,6 +8,7 @@
     :tooltip-title="fieldTooltipTitle"
     :tooltip-on-click="fieldTooltipOnClick"
     :for="name"
+    :required="required"
   >
     <v-card class="bg-grey-50" color="grey" variant="outlined">
       <RcSesCheckbox
