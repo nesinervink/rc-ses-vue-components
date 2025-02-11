@@ -8,6 +8,7 @@ type Props = {
     tooltip?: string;
     tooltipTitle?: string;
     tooltipOnClick?: boolean;
+    required?: boolean;
 };
 declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToOption<Props>, {
     label: undefined;
@@ -17,6 +18,7 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
     tooltip: undefined;
     tooltipTitle: undefined;
     tooltipOnClick: boolean;
+    required: boolean;
 }>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToOption<Props>, {
     label: undefined;
     description: undefined;
@@ -25,7 +27,9 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
     tooltip: undefined;
     tooltipTitle: undefined;
     tooltipOnClick: boolean;
+    required: boolean;
 }>>>, {
+    required: boolean;
     variant: "text" | "outlined";
     label: string;
     description: string;
