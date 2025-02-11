@@ -267,9 +267,31 @@
           v-bind="fieldProps.field"
           :error="fieldProps.errorMessage"
           field-label="Įkelti dokumentus"
+          field-description="Tinkami formatai: .doc, .xdoc, .pdf, .pages"
           name="files"
           multiple
-        />
+          accept="image/*"
+          content-description="Maksumalus failo dydis:"
+          :max-files="3"
+          :on-drop="onDrop"
+          :on-drag-enter="() => console.log('drag enter')"
+          :on-drag-leave="() => console.log('drag leave')"
+          :on-drag-over="() => console.log('drag over')"
+          :on-drop-rejected="() => console.log('drop rejected')"
+          :on-drop-accepted="() => console.log('drop accepted')"
+          :prevent-drop-on-document="true"
+          :no-click="false"
+          :no-keyboard="false"
+          :no-drag="false"
+          :no-drag-events-bubbling="false"
+        >
+          <template #content-description="{ contentDescription }">
+            {{ contentDescription }}
+            <span class="text-error">5MB</span>
+            <br />
+            <span class="text-error">Maksimalus failų skaičius: 3</span>
+          </template>
+        </RcSesFileDropzoneField>
       </Field>
       <div class="d-flex justify-end mt-5">
         <v-btn type="submit" color="primary">Submit</v-btn>
@@ -325,6 +347,7 @@ const FormSchema = yup.object({
   skaicius: yup.number().required().min(5),
   radioPasirinkimas: yup.string().required(),
   radioButtonsPasirinkimas: yup.string().required(),
+  files: yup.array().required().min(3),
 })
 
 useForm({
@@ -334,5 +357,9 @@ useForm({
 
 function onSubmit(values) {
   console.log('Form submitted with values:', values)
+}
+
+function onDrop(files) {
+  console.log('Files dropped:', files)
 }
 </script>

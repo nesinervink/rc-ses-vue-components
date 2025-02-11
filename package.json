@@ -28,6 +28,7 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "build:lib": "vue-tsc --p ./tsconfig.lib.json && vite build --config vite.config.build.mts",
+    "clean:cache": "rimraf node_modules/.vite && rimraf node_modules/.cache",
     "preview": "vite preview",
     "lint": "eslint . --fix --ignore-path .gitignore",
     "storybook": "storybook dev -p 6006",

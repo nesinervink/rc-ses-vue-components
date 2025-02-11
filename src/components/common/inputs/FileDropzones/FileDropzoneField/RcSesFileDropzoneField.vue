@@ -6,8 +6,13 @@
     :tooltip-title="fieldTooltipTitle"
     :tooltip-on-click="fieldTooltipOnClick"
     :for="name"
+    :required="required"
   >
-    <RcSesFileDropzone v-model="model" v-bind="props" />
+    <RcSesFileDropzone v-model="model" v-bind="props">
+      <template v-if="$slots['content-description']" #content-description="binds">
+        <slot name="content-description" v-bind="binds" />
+      </template>
+    </RcSesFileDropzone>
   </RcSesFieldWrapper>
 </template>
 

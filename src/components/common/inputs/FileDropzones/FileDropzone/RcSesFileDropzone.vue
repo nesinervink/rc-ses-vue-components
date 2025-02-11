@@ -9,13 +9,22 @@
         'rc-error': error,
       }"
     >
-      <input v-bind="getInputProps()" :name="name" />
+      <input
+        v-bind="getInputProps()"
+        :name="name"
+        :capture="capture"
+        :webkitdirectory="webkitdirectory"
+      />
       <div class="dropzone-content">
         <v-icon icon="$upload" class="mb-2" size="24" />
         <p class="text-subtitle-1 mb-1 font-weight-strong">
           Nutempkite failą čia arba įkelkite iš kompiuterio
         </p>
-        <p class="text-subtitle-2 font-italic">Maksumalus failo dydis: 5MB</p>
+        <p class="text-subtitle-2 font-italic">
+          <slot name="content-description" v-bind="{ contentDescription }">
+            {{ contentDescription }}
+          </slot>
+        </p>
       </div>
     </div>
 
@@ -37,12 +46,15 @@
         <v-list-item-title class="text-subtitle-1">{{ file.name }}</v-list-item-title>
       </v-list-item>
     </v-list>
+    <RcSesError v-if="error">{{ error }}</RcSesError>
   </div>
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue'
+import { reactive, toRef } from 'vue'
 import { FileRejectReason, useDropzone } from 'vue3-dropzone'
+
+import RcSesError from '@/components/common/Error/RcSesError.vue'
 
 import './style.scss'
 import { FileDropzoneProps } from './type'
@@ -50,12 +62,21 @@ import { FileDropzoneProps } from './type'
 const model = defineModel<any[]>()
 const props = defineProps<FileDropzoneProps>()
 
+const error = toRef(props, 'error')
+
 const state = reactive({
   files: [] as any[],
 })
 
-const { onDrop, getFilesFromEvent, name, error, ...restProps } =
-  props as FileDropzoneProps
+const {
+  onDrop,
+  getFilesFromEvent,
+  name,
+  contentDescription,
+  capture,
+  webkitdirectory,
+  ...restProps
+} = props as FileDropzoneProps
 
 const filesFromEvent = getFilesFromEvent === undefined ? {} : { getFilesFromEvent }
 
