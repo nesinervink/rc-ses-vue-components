@@ -12,6 +12,7 @@
           placeholder="Tekstas"
           messages="Lorem Ipsum is simply dummy text."
           counter="10"
+          required
         ></RcSesTextField>
       </Field>
 
@@ -29,6 +30,7 @@
           placeholder="Tekstas"
           messages="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard."
           counter="300"
+          required
         ></RcSesTextAreaField>
       </Field>
 
@@ -42,6 +44,7 @@
           placeholder="Pasirinkite"
           :searchable="true"
           :multiple="true"
+          required
           :items="[
             {
               title: 'Tikslas 1',
@@ -70,6 +73,7 @@
           class="form-control"
           default-iso="lt"
           name="telefonas"
+          required
         />
       </Field>
 
@@ -83,6 +87,7 @@
           class="form-control"
           :modal-component="SearchModal"
           name="ieskoti"
+          required
         />
       </Field>
 
@@ -95,6 +100,7 @@
           :max-width="150"
           placeholder="Data"
           name="data"
+          required
         />
       </Field>
 
@@ -108,6 +114,7 @@
           :max-width="300"
           placeholder="Pradžia  →  Pabaiga"
           name="laikotarpis"
+          required
         >
           <template #append-inner>
             <RcSesTooltip
@@ -127,6 +134,7 @@
           :max-width="300"
           placeholder="Pasirinkite laiką"
           name="laikas"
+          required
         />
       </Field>
 
@@ -138,6 +146,7 @@
           field-label="Skaičius"
           :max-width="300"
           name="skaicius"
+          required
         >
           <template #append-inner>
             <RcSesTooltip
@@ -160,6 +169,7 @@
           label="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."
           field-label="Sutikimas"
           name="sutikimas"
+          required
         />
       </Field>
 
@@ -234,6 +244,7 @@
           }"
           class="pa-2"
           name="radioPasirinkimas"
+          required
           :options="[
             { value: 'p1', label: 'Pasirinkimas #1' },
             { value: 'p2', label: 'Pasirinkimas #2' },
@@ -253,6 +264,7 @@
           }"
           field-label="Pasirinkimas"
           name="radioButtonsPasirinkimas"
+          required
           :options="[
             { value: 'p1', label: 'Pasirinkimas #1' },
             { value: 'p2', label: 'Pasirinkimas #2' },
@@ -267,9 +279,32 @@
           v-bind="fieldProps.field"
           :error="fieldProps.errorMessage"
           field-label="Įkelti dokumentus"
+          field-description="Tinkami formatai: .doc, .xdoc, .pdf, .pages"
+          required
           name="files"
           multiple
-        />
+          accept="image/*"
+          content-description="Maksumalus failo dydis:"
+          :max-files="3"
+          :on-drop="onDrop"
+          :on-drag-enter="() => console.log('drag enter')"
+          :on-drag-leave="() => console.log('drag leave')"
+          :on-drag-over="() => console.log('drag over')"
+          :on-drop-rejected="() => console.log('drop rejected')"
+          :on-drop-accepted="() => console.log('drop accepted')"
+          :prevent-drop-on-document="true"
+          :no-click="false"
+          :no-keyboard="false"
+          :no-drag="false"
+          :no-drag-events-bubbling="false"
+        >
+          <template #content-description="{ contentDescription }">
+            {{ contentDescription }}
+            <span class="text-error">5MB</span>
+            <br />
+            <span class="text-error">Maksimalus failų skaičius: 3</span>
+          </template>
+        </RcSesFileDropzoneField>
       </Field>
       <div class="d-flex justify-end mt-5">
         <v-btn type="submit" color="primary">Submit</v-btn>
@@ -280,7 +315,7 @@
 
 <script setup lang="ts">
 import { toTypedSchema } from '@vee-validate/yup'
-import { configure, Field, Form as VeeForm, useForm } from 'vee-validate'
+import { Field, Form as VeeForm, configure, useForm } from 'vee-validate'
 import * as yup from 'yup'
 
 import RcSesCheckboxField from '@/components/common/inputs/Checkboxes/CheckboxField/RcSesCheckboxField.vue'
@@ -303,7 +338,7 @@ configure({
   validateOnChange: true,
   validateOnInput: false,
   validateOnModelUpdate: false,
-});
+})
 
 const FormSchema = yup.object({
   trumpas: yup.string().required(),
@@ -325,6 +360,7 @@ const FormSchema = yup.object({
   skaicius: yup.number().required().min(5),
   radioPasirinkimas: yup.string().required(),
   radioButtonsPasirinkimas: yup.string().required(),
+  files: yup.array().required().min(3),
 })
 
 useForm({
@@ -334,5 +370,9 @@ useForm({
 
 function onSubmit(values) {
   console.log('Form submitted with values:', values)
+}
+
+function onDrop(files) {
+  console.log('Files dropped:', files)
 }
 </script>

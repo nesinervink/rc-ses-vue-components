@@ -42,4 +42,3 @@ export interface ButtonProps {
   variant?: ButtonVariants
   width?: VBtn['$props']['width']
 }
-
