@@ -326,4 +326,3 @@ const handlePaste = (event: ClipboardEvent) => {
   },
 ) */
 </script>
-

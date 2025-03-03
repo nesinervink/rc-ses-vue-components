@@ -6,6 +6,7 @@
     :tooltip-title="fieldTooltipTitle"
     :tooltip-on-click="fieldTooltipOnClick"
     :for="name"
+    :required="required"
   >
     <v-text-field
       ref="input"

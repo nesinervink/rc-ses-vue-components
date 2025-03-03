@@ -12,4 +12,5 @@ export interface FieldProps {
   fieldTooltip?: string
   fieldTooltipTitle?: string
   fieldTooltipOnClick?: boolean
+  required?: boolean
 }

@@ -8,6 +8,7 @@
           class="text-subtitle-1 text-md-body-2 font-weight-medium"
         >
           {{ label }}
+          <span v-if="required" class="text-error">*</span>
         </label>
 
         <RcSesTooltip
@@ -77,6 +78,7 @@ type Props = {
   tooltip?: string
   tooltipTitle?: string
   tooltipOnClick?: boolean
+  required?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -87,5 +89,6 @@ const props = withDefaults(defineProps<Props>(), {
   tooltip: undefined,
   tooltipTitle: undefined,
   tooltipOnClick: false,
+  required: false,
 })
 </script>

@@ -12,6 +12,8 @@
     :readonly="readonly"
     :placeholder="placeholder"
     :label="label"
+    :true-value="trueValue"
+    :false-value="falseValue"
   >
     <template v-if="$slots.label" #label="labelProps">
       <slot name="label" v-bind="labelProps">{{ label }}</slot>
