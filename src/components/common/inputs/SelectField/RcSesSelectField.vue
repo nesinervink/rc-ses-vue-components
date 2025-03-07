@@ -17,7 +17,7 @@
       class="rc-field rc-select-field"
       variant="outlined"
       :placeholder="placeholder"
-      :items="items"
+      :items="computedItems"
       :hide-details="!(!!error || !!counter || !!messages)"
       :error="!!error"
       :error-messages="error"
@@ -48,11 +48,6 @@
 
       <template #item="{ item, props }">
         <v-list-item
-          v-if="
-            searchValue
-              ? getItemValueForSearch(item.raw).includes(searchValue.toLowerCase())
-              : true
-          "
           v-bind="props"
           class="rc-menu-list-item"
           :append-icon="model === item.value ? '$checkPrimary' : undefined"
