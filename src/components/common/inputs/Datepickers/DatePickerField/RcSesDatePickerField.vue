@@ -10,14 +10,14 @@
   >
     <RcSesDatePicker
       v-model="model"
-      v-bind="$attrs"
+      v-bind="{ ...$attrs, ...datePickerProps }"
       :range="range"
-      :max-width="maxWidth"
       :placeholder="placeholder"
       :name="name"
-      :error="error"
+      :error="errorComputed"
       :disabled="disabled"
       :readonly="readonly"
+      @update:model-value="veeField?.setValue($event)"
     >
       <template v-if="$slots['append-inner']" #append-inner="binds">
         <slot name="append-inner" v-bind="binds" />
@@ -42,6 +42,8 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+
 import RcSesDatePicker from '@/components/common/inputs/Datepickers/DatePicker/RcSesDatePicker.vue'
 import RcSesFieldWrapper from '@/components/common/inputs/FieldWrapper/RcSesFieldWrapper.vue'
 
@@ -51,6 +53,12 @@ defineOptions({
   inheritAttrs: false,
 })
 
-defineProps<DatePickerFieldProps>()
+const props = defineProps<DatePickerFieldProps>()
 const model = defineModel<any>()
+
+const { modelValue, modelModifiers, ...datePickerProps } = props
+
+const errorComputed = computed(() => {
+  return props.error || props.veeField?.errorMessage
+})
 </script>

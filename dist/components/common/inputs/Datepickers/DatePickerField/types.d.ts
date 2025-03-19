@@ -1,4 +1,7 @@
 import { DatePickerProps } from '../DatePicker/types';
-import { FieldProps } from '../../../../../types/inputs/FieldProps';
+import { FieldProps, VeeField } from '../../../../../types/inputs/FieldProps';
 
-export type DatePickerFieldProps = DatePickerProps & FieldProps;
+export type DatePickerFieldProps = DatePickerProps & FieldProps & VeeField & {
+    modelValue?: any;
+    modelModifiers?: any;
+};
