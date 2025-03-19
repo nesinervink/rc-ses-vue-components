@@ -120,13 +120,13 @@
 
     <template v-if="range" #action-preview>
       <v-btn variant="text" color="primary" class="text-body-2" @click="getThisWeek">
-        Ši savaitė
+        {{ t('RcSesDatePicker.thisWeek', { ns: 'components' }) }}
       </v-btn>
       <v-btn variant="text" color="primary" class="text-body-2" @click="getThisMonth">
-        Šis mėnuo
+        {{ t('RcSesDatePicker.thisMonth', { ns: 'components' }) }}
       </v-btn>
       <v-btn variant="text" color="primary" class="text-body-2" @click="getLastMonth">
-        Praėjęs mėnuo
+        {{ t('RcSesDatePicker.previousMonth', { ns: 'components' }) }}
       </v-btn>
     </template>
 
@@ -135,7 +135,9 @@
     </template>
 
     <template #action-buttons>
-      <v-btn variant="text" color="primary" @click="closeDatepicker">Uždaryti</v-btn>
+      <v-btn variant="text" color="primary" @click="closeDatepicker">{{
+        t('RcSesDatePicker.close', { ns: 'components' })
+      }}</v-btn>
     </template>
   </DatePicker>
 </template>
@@ -143,6 +145,7 @@
 <script setup lang="ts">
 import DatePicker from '@vuepic/vue-datepicker'
 import '@vuepic/vue-datepicker/dist/main.css'
+import { useTranslation } from 'i18next-vue'
 import { nextTick, ref } from 'vue'
 
 import XCircleFilledIcon from '@/assets/icons/filled/XCircleFilledIcon.vue'
@@ -150,6 +153,8 @@ import RcSesDateInput from '@/components/common/inputs/Datepickers/DateInput/RcS
 import { DatePickerProps } from '@/components/common/inputs/Datepickers/DatePicker/types'
 
 import './style.scss'
+
+const { t } = useTranslation()
 
 const props = defineProps<DatePickerProps>()
 

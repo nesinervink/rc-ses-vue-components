@@ -1,13 +1,41 @@
 import vue from '@vitejs/plugin-vue'
 import { URL, fileURLToPath } from 'node:url'
 import fonts from 'unplugin-fonts/vite'
-import { defineConfig } from 'vite'
+import { HtmlTagDescriptor, defineConfig } from 'vite'
 import layouts from 'vite-plugin-vue-layouts'
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
 export default defineConfig({
   define: { 'process.env': {} },
   plugins: [
+    {
+      name: 'html-transform',
+      transformIndexHtml: (html) => {
+        const tags: HtmlTagDescriptor[] = [
+          {
+            injectTo: 'head',
+            tag: 'script',
+            attrs: {
+              src: './config.js',
+              type: 'text/javascript',
+            },
+          },
+          {
+            injectTo: 'head-prepend',
+            tag: 'base',
+            attrs: {
+              href: '/',
+            },
+          },
+        ];
+
+        return {
+          html,
+          order: 'pre',
+          tags,
+        };
+      },
+    },
     layouts(),
     vue({
       template: { transformAssetUrls },

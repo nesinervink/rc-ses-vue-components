@@ -37,6 +37,7 @@ import RcSesFormContainer from '@/components/layouts/FormContainer/RcSesFormCont
 import RcSesFormStepper from '@/components/layouts/FormStepper/RcSesFormStepper.vue'
 import RcSesFormTabContainer from '@/components/layouts/FormTabContainer/RcSesFormTabContainer.vue'
 import RcSesHeader from '@/components/layouts/Header/RcSesHeader.vue'
+import initI18n from '@/plugins/i18n'
 import createRcSesVuetify from '@/plugins/vuetify'
 import '@/styles/shared/index.scss'
 import type UseFormType from '@/types/forms/UseFormType'
@@ -46,6 +47,8 @@ export const globalOptions = Symbol()
 
 export function createRcSesComponents(options: object = {}): Plugin<[]> {
   const install = (app: App) => {
+    initI18n()
+
     app.provide(globalOptions, options)
 
     // Layout components

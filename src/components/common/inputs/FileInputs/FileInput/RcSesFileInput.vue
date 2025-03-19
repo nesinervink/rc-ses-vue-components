@@ -19,18 +19,21 @@
 
     <template #append-inner>
       <v-btn v-if="!model" class="rc-btn-upload" prepend-icon="$upload" color="grey-100"
-        >Įkelti failą
+        >{{ t('RcSesFileInput.label', { ns: 'components' }) }}
       </v-btn>
     </template>
   </v-file-input>
 </template>
 
 <script setup lang="ts">
+import { useTranslation } from 'i18next-vue'
 import { computed } from 'vue'
 
 import { FileInputProps } from '@/components/common/inputs/FileInputs/FileInput/type'
 
 import './style.scss'
+
+const { t } = useTranslation()
 
 const model = defineModel<File | File[] | null | undefined>()
 

@@ -18,7 +18,7 @@
       <div class="dropzone-content">
         <v-icon icon="$upload" class="mb-2" size="24" />
         <p class="text-subtitle-1 mb-1 font-weight-strong">
-          Nutempkite failą čia arba įkelkite iš kompiuterio
+          {{ t('RcSesFileDropzone.label', { ns: 'components' }) }}
         </p>
         <p class="text-subtitle-2 font-italic">
           <slot name="content-description" v-bind="{ contentDescription }">
@@ -51,6 +51,7 @@
 </template>
 
 <script setup lang="ts">
+import { useTranslation } from 'i18next-vue'
 import { reactive, toRef } from 'vue'
 import { FileRejectReason, useDropzone } from 'vue3-dropzone'
 
@@ -58,6 +59,8 @@ import RcSesError from '@/components/common/Error/RcSesError.vue'
 
 import './style.scss'
 import { FileDropzoneProps } from './type'
+
+const { t } = useTranslation()
 
 const model = defineModel<any[]>()
 const props = defineProps<FileDropzoneProps>()

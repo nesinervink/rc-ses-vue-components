@@ -3,7 +3,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import vue from '@vitejs/plugin-vue'
 import { URL, fileURLToPath } from 'node:url'
 import typescript from 'rollup-plugin-typescript2'
-import { defineConfig } from 'vite'
+import { HtmlTagDescriptor, defineConfig } from 'vite'
 import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 import dts from 'vite-plugin-dts'
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
@@ -39,6 +39,34 @@ export default defineConfig({
     },
   },
   plugins: [
+    {
+      name: 'html-transform',
+      transformIndexHtml: (html) => {
+        const tags: HtmlTagDescriptor[] = [
+          {
+            injectTo: 'head',
+            tag: 'script',
+            attrs: {
+              src: './config.js',
+              type: 'text/javascript',
+            },
+          },
+          {
+            injectTo: 'head-prepend',
+            tag: 'base',
+            attrs: {
+              href: '/',
+            },
+          },
+        ];
+
+        return {
+          html,
+          order: 'pre',
+          tags,
+        };
+      },
+    },
     commonjs(),
     vue({
       template: { transformAssetUrls },
@@ -52,7 +80,6 @@ export default defineConfig({
       tsconfig: './tsconfig.lib.json',
       include: [
         './src/**/*.{vue|ts|tsx|d.ts}',
-        './src/typed-router.d.ts',
       ],
     }),
     vuetify({
