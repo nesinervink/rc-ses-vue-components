@@ -2,6 +2,7 @@
 
 :root {
   /*General*/
+  --dp-max-width: 100%;
   --dp-font-family: var.$body-font-family;
   --dp-border-radius: 4px; /*Configurable border-radius*/
   --dp-cell-border-radius: 4px; /*Specific border radius for the calendar cell*/
@@ -229,7 +230,7 @@
 // INPUT STYLE #############################
 
 .rc-datepicker {
-  width: 100%;
+  max-width: var(--dp-max-width);
 
   .dp__clear_icon {
     height: 1.5rem;
