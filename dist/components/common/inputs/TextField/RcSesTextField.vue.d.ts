@@ -1,5 +1,5 @@
 import { TextFieldProps } from './type';
-import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, JSXComponent, ComputedRef, Ref, PropType } from 'vue';
+import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, ComputedRef, Ref, PropType } from 'vue';
 
 declare let __VLS_typeProps: TextFieldProps;
 type __VLS_PublicProps = {
@@ -121,8 +121,8 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
     width: string | number;
     density: "default" | "comfortable" | "compact" | null;
     baseColor: string;
-    prependIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
-    appendIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
+    prependIcon: any;
+    appendIcon: any;
     name: string;
     focused: boolean;
     maxErrors: string | number;
@@ -135,13 +135,13 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
     messages: string | readonly string[];
     direction: "horizontal" | "vertical";
     placeholder: string;
-    clearIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
+    clearIcon: any;
     clearable: boolean;
     dirty: boolean;
     persistentClear: boolean;
     singleLine: boolean;
-    appendInnerIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
-    prependInnerIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
+    appendInnerIcon: any;
+    prependInnerIcon: any;
     autofocus: boolean;
     counter: string | number | boolean;
     counterValue: (number | ((value: any) => number)) & (number | ((value: any) => number));

@@ -1,5 +1,5 @@
 import { AlertProps, AlertVariants, AlertTypes } from './types';
-import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, JSXComponent, PropType } from 'vue';
+import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from 'vue';
 import { ColorType } from '../../../types/common/ColorType';
 
 declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToOption<AlertProps>, {
@@ -67,7 +67,7 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
     tile: boolean;
     elevation: string | number;
     text: string;
-    icon: false | (string | (string | [path: string, opacity: number])[] | JSXComponent);
+    icon: any;
     position: "fixed" | "static" | "absolute" | "relative" | "sticky";
     location: "start" | "end" | "top" | "bottom" | "left" | "right" | "center" | "center center" | "top start" | "top end" | "top left" | "top right" | "top center" | "bottom start" | "bottom end" | "bottom left" | "bottom right" | "bottom center" | "start top" | "start bottom" | "start center" | "end top" | "end bottom" | "end center" | "left top" | "left bottom" | "left center" | "right top" | "right bottom" | "right center";
     height: string | number;
@@ -80,7 +80,7 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
     border: boolean | "start" | "end" | "top" | "bottom";
     borderColor: string;
     closable: boolean;
-    closeIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
+    closeIcon: any;
     closeLabel: string;
     prominent: boolean;
 }, {}>, {

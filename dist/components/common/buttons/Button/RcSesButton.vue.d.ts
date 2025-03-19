@@ -1,5 +1,5 @@
 import { ButtonProps, ButtonVariants } from './types';
-import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, JSXComponent, PropType } from 'vue';
+import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from 'vue';
 import { ColorType } from '../../../../types/common/ColorType';
 import { RouteLocationRaw } from 'vue-router';
 
@@ -92,7 +92,7 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
     elevation: string | number;
     text: string;
     size: string | number;
-    icon: boolean | (string | (string | [path: string, opacity: number])[] | JSXComponent);
+    icon: any;
     href: string;
     to: RouteLocationRaw;
     exact: boolean;
@@ -107,8 +107,8 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
     density: "default" | "comfortable" | "compact" | null;
     border: string | number | boolean;
     baseColor: string;
-    prependIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
-    appendIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
+    prependIcon: any;
+    appendIcon: any;
     block: boolean;
     stacked: boolean;
 }, {}>, {

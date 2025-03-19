@@ -1,6 +1,6 @@
 import { StoryFn } from '@storybook/vue3';
 import { ButtonProps, ButtonVariants } from '../../../../components/common/buttons/Button/types';
-import { CreateComponentPublicInstance, ExtractPropTypes, PropType, JSXComponent, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from 'vue';
+import { CreateComponentPublicInstance, ExtractPropTypes, PropType, ComponentOptionsMixin, VNodeProps, AllowedComponentProps, ComponentCustomProps, ComponentOptionsBase } from 'vue';
 import { ColorType } from '../../../../types/common/ColorType';
 import { RouteLocationRaw } from 'vue-router';
 
@@ -73,7 +73,7 @@ declare const _default: {
                     default: undefined;
                 };
                 icon: {
-                    type: PropType<boolean | (string | (string | [path: string, opacity: number])[] | JSXComponent)>;
+                    type: PropType<any>;
                     default: undefined;
                 };
                 href: {
@@ -136,11 +136,11 @@ declare const _default: {
                     default: undefined;
                 };
                 prependIcon: {
-                    type: PropType<string | (string | [path: string, opacity: number])[] | JSXComponent>;
+                    type: PropType<any>;
                     default: undefined;
                 };
                 appendIcon: {
-                    type: PropType<string | (string | [path: string, opacity: number])[] | JSXComponent>;
+                    type: PropType<any>;
                     default: undefined;
                 };
                 block: {
@@ -217,7 +217,7 @@ declare const _default: {
                     default: undefined;
                 };
                 icon: {
-                    type: PropType<boolean | (string | (string | [path: string, opacity: number])[] | JSXComponent)>;
+                    type: PropType<any>;
                     default: undefined;
                 };
                 href: {
@@ -280,11 +280,11 @@ declare const _default: {
                     default: undefined;
                 };
                 prependIcon: {
-                    type: PropType<string | (string | [path: string, opacity: number])[] | JSXComponent>;
+                    type: PropType<any>;
                     default: undefined;
                 };
                 appendIcon: {
-                    type: PropType<string | (string | [path: string, opacity: number])[] | JSXComponent>;
+                    type: PropType<any>;
                     default: undefined;
                 };
                 block: {
@@ -312,7 +312,7 @@ declare const _default: {
                 elevation: string | number;
                 text: string;
                 size: string | number;
-                icon: boolean | (string | (string | [path: string, opacity: number])[] | JSXComponent);
+                icon: any;
                 href: string;
                 to: RouteLocationRaw;
                 exact: boolean;
@@ -327,8 +327,8 @@ declare const _default: {
                 density: "default" | "comfortable" | "compact" | null;
                 border: string | number | boolean;
                 baseColor: string;
-                prependIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
-                appendIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
+                prependIcon: any;
+                appendIcon: any;
                 block: boolean;
                 stacked: boolean;
             }, true, {}, {}, {
@@ -404,7 +404,7 @@ declare const _default: {
                     default: undefined;
                 };
                 icon: {
-                    type: PropType<boolean | (string | (string | [path: string, opacity: number])[] | JSXComponent)>;
+                    type: PropType<any>;
                     default: undefined;
                 };
                 href: {
@@ -467,11 +467,11 @@ declare const _default: {
                     default: undefined;
                 };
                 prependIcon: {
-                    type: PropType<string | (string | [path: string, opacity: number])[] | JSXComponent>;
+                    type: PropType<any>;
                     default: undefined;
                 };
                 appendIcon: {
-                    type: PropType<string | (string | [path: string, opacity: number])[] | JSXComponent>;
+                    type: PropType<any>;
                     default: undefined;
                 };
                 block: {
@@ -499,7 +499,7 @@ declare const _default: {
                 elevation: string | number;
                 text: string;
                 size: string | number;
-                icon: boolean | (string | (string | [path: string, opacity: number])[] | JSXComponent);
+                icon: any;
                 href: string;
                 to: RouteLocationRaw;
                 exact: boolean;
@@ -514,8 +514,8 @@ declare const _default: {
                 density: "default" | "comfortable" | "compact" | null;
                 border: string | number | boolean;
                 baseColor: string;
-                prependIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
-                appendIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
+                prependIcon: any;
+                appendIcon: any;
                 block: boolean;
                 stacked: boolean;
             }>;
@@ -588,7 +588,7 @@ declare const _default: {
                 default: undefined;
             };
             icon: {
-                type: PropType<boolean | (string | (string | [path: string, opacity: number])[] | JSXComponent)>;
+                type: PropType<any>;
                 default: undefined;
             };
             href: {
@@ -651,11 +651,11 @@ declare const _default: {
                 default: undefined;
             };
             prependIcon: {
-                type: PropType<string | (string | [path: string, opacity: number])[] | JSXComponent>;
+                type: PropType<any>;
                 default: undefined;
             };
             appendIcon: {
-                type: PropType<string | (string | [path: string, opacity: number])[] | JSXComponent>;
+                type: PropType<any>;
                 default: undefined;
             };
             block: {
@@ -683,7 +683,7 @@ declare const _default: {
             elevation: string | number;
             text: string;
             size: string | number;
-            icon: boolean | (string | (string | [path: string, opacity: number])[] | JSXComponent);
+            icon: any;
             href: string;
             to: RouteLocationRaw;
             exact: boolean;
@@ -698,8 +698,8 @@ declare const _default: {
             density: "default" | "comfortable" | "compact" | null;
             border: string | number | boolean;
             baseColor: string;
-            prependIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
-            appendIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
+            prependIcon: any;
+            appendIcon: any;
             block: boolean;
             stacked: boolean;
         }, {}, string, {}> & VNodeProps & AllowedComponentProps & ComponentCustomProps & (new () => {
@@ -779,7 +779,7 @@ declare const _default: {
                 default: undefined;
             };
             icon: {
-                type: PropType<boolean | (string | (string | [path: string, opacity: number])[] | JSXComponent)>;
+                type: PropType<any>;
                 default: undefined;
             };
             href: {
@@ -842,11 +842,11 @@ declare const _default: {
                 default: undefined;
             };
             prependIcon: {
-                type: PropType<string | (string | [path: string, opacity: number])[] | JSXComponent>;
+                type: PropType<any>;
                 default: undefined;
             };
             appendIcon: {
-                type: PropType<string | (string | [path: string, opacity: number])[] | JSXComponent>;
+                type: PropType<any>;
                 default: undefined;
             };
             block: {
@@ -923,7 +923,7 @@ declare const _default: {
                 default: undefined;
             };
             icon: {
-                type: PropType<boolean | (string | (string | [path: string, opacity: number])[] | JSXComponent)>;
+                type: PropType<any>;
                 default: undefined;
             };
             href: {
@@ -986,11 +986,11 @@ declare const _default: {
                 default: undefined;
             };
             prependIcon: {
-                type: PropType<string | (string | [path: string, opacity: number])[] | JSXComponent>;
+                type: PropType<any>;
                 default: undefined;
             };
             appendIcon: {
-                type: PropType<string | (string | [path: string, opacity: number])[] | JSXComponent>;
+                type: PropType<any>;
                 default: undefined;
             };
             block: {
@@ -1018,7 +1018,7 @@ declare const _default: {
             elevation: string | number;
             text: string;
             size: string | number;
-            icon: boolean | (string | (string | [path: string, opacity: number])[] | JSXComponent);
+            icon: any;
             href: string;
             to: RouteLocationRaw;
             exact: boolean;
@@ -1033,8 +1033,8 @@ declare const _default: {
             density: "default" | "comfortable" | "compact" | null;
             border: string | number | boolean;
             baseColor: string;
-            prependIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
-            appendIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
+            prependIcon: any;
+            appendIcon: any;
             block: boolean;
             stacked: boolean;
         }, true, {}, {}, {
@@ -1110,7 +1110,7 @@ declare const _default: {
                 default: undefined;
             };
             icon: {
-                type: PropType<boolean | (string | (string | [path: string, opacity: number])[] | JSXComponent)>;
+                type: PropType<any>;
                 default: undefined;
             };
             href: {
@@ -1173,11 +1173,11 @@ declare const _default: {
                 default: undefined;
             };
             prependIcon: {
-                type: PropType<string | (string | [path: string, opacity: number])[] | JSXComponent>;
+                type: PropType<any>;
                 default: undefined;
             };
             appendIcon: {
-                type: PropType<string | (string | [path: string, opacity: number])[] | JSXComponent>;
+                type: PropType<any>;
                 default: undefined;
             };
             block: {
@@ -1205,7 +1205,7 @@ declare const _default: {
             elevation: string | number;
             text: string;
             size: string | number;
-            icon: boolean | (string | (string | [path: string, opacity: number])[] | JSXComponent);
+            icon: any;
             href: string;
             to: RouteLocationRaw;
             exact: boolean;
@@ -1220,8 +1220,8 @@ declare const _default: {
             density: "default" | "comfortable" | "compact" | null;
             border: string | number | boolean;
             baseColor: string;
-            prependIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
-            appendIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
+            prependIcon: any;
+            appendIcon: any;
             block: boolean;
             stacked: boolean;
         }>;
@@ -1294,7 +1294,7 @@ declare const _default: {
             default: undefined;
         };
         icon: {
-            type: PropType<boolean | (string | (string | [path: string, opacity: number])[] | JSXComponent)>;
+            type: PropType<any>;
             default: undefined;
         };
         href: {
@@ -1357,11 +1357,11 @@ declare const _default: {
             default: undefined;
         };
         prependIcon: {
-            type: PropType<string | (string | [path: string, opacity: number])[] | JSXComponent>;
+            type: PropType<any>;
             default: undefined;
         };
         appendIcon: {
-            type: PropType<string | (string | [path: string, opacity: number])[] | JSXComponent>;
+            type: PropType<any>;
             default: undefined;
         };
         block: {
@@ -1389,7 +1389,7 @@ declare const _default: {
         elevation: string | number;
         text: string;
         size: string | number;
-        icon: boolean | (string | (string | [path: string, opacity: number])[] | JSXComponent);
+        icon: any;
         href: string;
         to: RouteLocationRaw;
         exact: boolean;
@@ -1404,8 +1404,8 @@ declare const _default: {
         density: "default" | "comfortable" | "compact" | null;
         border: string | number | boolean;
         baseColor: string;
-        prependIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
-        appendIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
+        prependIcon: any;
+        appendIcon: any;
         block: boolean;
         stacked: boolean;
     }, {}, string, {}> & VNodeProps & AllowedComponentProps & ComponentCustomProps & (new () => {
