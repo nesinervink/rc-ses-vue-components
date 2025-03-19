@@ -1,34 +1,15 @@
-import { PhoneInputFieldProps, PhoneInputModel } from './type';
+import { DateInputProps } from './type';
 import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, ComputedRef, Ref, PropType } from 'vue';
-import { VeeFieldType } from '../../../../types/inputs/FieldProps';
 
-declare let __VLS_typeProps: PhoneInputFieldProps;
+declare let __VLS_typeProps: DateInputProps;
 type __VLS_PublicProps = {
-    modelValue?: PhoneInputModel | undefined;
+    modelValue?: any;
 } & typeof __VLS_typeProps;
-declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToOption<__VLS_PublicProps>, {
-    defaultIso: undefined;
-    fieldLabel: undefined;
-    fieldDescription: undefined;
-    fieldTooltip: undefined;
-    veeField: undefined;
-}>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
-    "update:modelValue": (modelValue: PhoneInputModel | undefined) => void;
-}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToOption<__VLS_PublicProps>, {
-    defaultIso: undefined;
-    fieldLabel: undefined;
-    fieldDescription: undefined;
-    fieldTooltip: undefined;
-    veeField: undefined;
-}>>> & {
-    "onUpdate:modelValue"?: ((modelValue: PhoneInputModel | undefined) => any) | undefined;
-}, {
-    fieldLabel: string;
-    fieldDescription: string;
-    fieldTooltip: string;
-    veeField: VeeFieldType<unknown>;
-    defaultIso: string;
-}, {}>, {
+declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_TypePropsToOption<__VLS_PublicProps>, {}, unknown, {}, {}, ComponentOptionsMixin, ComponentOptionsMixin, {
+    "update:modelValue": (modelValue: any) => void;
+}, string, PublicProps, Readonly< ExtractPropTypes<__VLS_TypePropsToOption<__VLS_PublicProps>>> & {
+    "onUpdate:modelValue"?: ((modelValue: any) => any) | undefined;
+}, {}, {}>, {
     append?(_: {
         id: ComputedRef<string>;
         messagesId: ComputedRef<string>;
@@ -79,16 +60,15 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
         resetValidation: () => void;
         validate: () => void;
     }): any;
+    "prepend-inner"?(_: {
+        isActive: Ref<boolean>;
+        isFocused: Ref<boolean>;
+        controlRef: Ref<HTMLElement | undefined>;
+        focus: () => void;
+        blur: () => void;
+    }): any;
 }>;
 export default _default;
-type __VLS_WithDefaults<P, D> = {
-    [K in keyof Pick<P, keyof P>]: K extends keyof D ? __VLS_Prettify<P[K] & {
-        default: D[K];
-    }> : P[K];
-};
-type __VLS_Prettify<T> = {
-    [K in keyof T]: T[K];
-} & {};
 type __VLS_WithTemplateSlots<T, S> = T & {
     new (): {
         $slots: S;
