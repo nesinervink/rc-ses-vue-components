@@ -93,28 +93,33 @@
 
       <Field v-slot="fieldProps" name="data">
         <RcSesDatePickerField
-          v-bind="fieldProps.field"
-          :error="fieldProps.errorMessage"
+          :vee-field="fieldProps"
           field-label="Data"
           class="form-control"
-          :max-width="150"
           placeholder="Data"
           name="data"
           required
+          :max-width="250"
         />
       </Field>
 
       <Field v-slot="fieldProps" name="laikotarpis">
         <RcSesDatePickerField
-          v-bind="fieldProps.field"
-          :error="fieldProps.errorMessage"
+          :vee-field="fieldProps"
           field-label="Laikotarpis"
           class="form-control"
           range
-          :max-width="300"
           placeholder="Pradžia  →  Pabaiga"
           name="laikotarpis"
           required
+          :max-width="350"
+          :input-props="{
+            counter: 10,
+          }"
+          :input-events="{
+            click: () => console.log('clicked'),
+            focus: () => console.log('focused'),
+          }"
         >
           <template #append-inner>
             <RcSesTooltip
@@ -185,6 +190,7 @@
           name="sutikimasTooltip"
           :true-value="'taip'"
           :false-value="'ne'"
+          required
         >
           <template #label="labelProps">
             <span v-bind="labelProps">{{ labelProps.label }}</span>
@@ -341,26 +347,47 @@ configure({
 })
 
 const FormSchema = yup.object({
-  trumpas: yup.string().required(),
-  ilgas: yup.string().required(),
-  tikslas: yup.array().required().min(1),
+  trumpas: yup
+    .string()
+    .required('Trumpas tekstas yra privalomas')
+    .max(10, 'Tekstas negali būti ilgesnis nei 10 simbolių'),
+  ilgas: yup
+    .string()
+    .required('Ilgas tekstas yra privalomas')
+    .max(300, 'Tekstas negali būti ilgesnis nei 300 simbolių'),
+  tikslas: yup
+    .array()
+    .required('Tikslas yra privalomas')
+    .min(1, 'Pasirinkite bent vieną tikslą'),
   telefonas: yup
     .object()
     .shape({
-      country: yup.object().required(),
-      value: yup.string().required(),
+      country: yup.object().required('Šalis yra privaloma'),
+      value: yup.string().required('Telefono numeris yra privalomas'),
     })
-    .required(),
-  ieskoti: yup.string().required(),
-  data: yup.string().required(),
-  sutikimas: yup.boolean().required(),
-  sutikimasTooltip: yup.string().matches(/(taip|ne)/),
-  laikotarpis: yup.array().required(),
-  laikas: yup.string().required(),
-  skaicius: yup.number().required().min(5),
-  radioPasirinkimas: yup.string().required(),
-  radioButtonsPasirinkimas: yup.string().required(),
-  files: yup.array().required().min(3),
+    .required('Telefono informacija yra privaloma'),
+  ieskoti: yup.string().required('Paieškos laukas yra privalomas'),
+  data: yup.string().required('Data yra privaloma'),
+  sutikimas: yup
+    .boolean()
+    .required('Sutikimas yra privalomas')
+    .oneOf([true], 'Turite duoti sutikimą'),
+  sutikimasTooltip: yup
+    .string()
+    .required('Sutikimas yra privalomas')
+    .oneOf(['taip'], 'Sutikimas yra privalomas'),
+  laikotarpis: yup
+    .array()
+    .required('Laikotarpis yra privalomas')
+    .length(2, 'Pasirinkite pradžios ir pabaigos datas'),
+  laikas: yup.string().required('Laikas yra privalomas'),
+  skaicius: yup
+    .number()
+    .required('Skaičius yra privalomas')
+    .min(5, 'Skaičius turi būti didesnis arba lygus 5'),
+  radioPasirinkimas: yup.string().required('Pasirinkimas yra privalomas'),
+  radioButtonsPasirinkimas: yup.string().required('Pasirinkimas yra privalomas'),
+  files: yup.array().required('Failai yra privalomi').min(3, 'Įkelkite bent 3 failus'),
 })
 
 useForm({

@@ -13,7 +13,6 @@
     :readonly="readonly"
     :range="range"
     :multi-calendars="range ? 2 : 0"
-    :format="formatPreview"
     :auto-apply="false"
     :close-on-auto-apply="false"
     :teleport="false"
@@ -23,40 +22,51 @@
     input-class-name="rc-datepicker-input"
     class="rc-datepicker"
     :class="{ 'rc-datepicker--range': range }"
+    :style="{ '--dp-max-width': maxWidth ? `${maxWidth}px` : '100%' }"
     @update:model-value="handleChange"
     @date-update="selectDate"
     @range-end="selectDate"
   >
     <template #dp-input="inputBind">
-      <RcSesTextField
-        v-bind="inputBind"
-        prepend-inner-icon="$calendar"
+      <RcSesDateInput
+        v-model="modelValue"
+        v-bind="inputProps"
         :placeholder="placeholder"
         :name="name"
-        :disabled="disabled"
-        :readonly="readonly"
+        :max-width="maxWidth"
+        :range="range"
+        :readonly="inputBind.isMenuOpen"
         :error="error"
-        :value="displayValue"
+        v-on="{ ...inputEvents }"
+        @click.stop=""
       >
+        <template #prepend-inner="binds">
+          <slot name="prepend-inner" v-bind="{ ...inputBind, ...binds }">
+            <v-icon
+              icon="$calendar"
+              @click="inputBind.isMenuOpen ? inputBind.closeMenu() : inputBind.openMenu()"
+            />
+          </slot>
+        </template>
+        <template v-if="$slots['append']" #append="binds">
+          <slot name="append" v-bind="{ ...inputBind, ...binds }" />
+        </template>
         <template v-if="$slots['append-inner']" #append-inner="binds">
-          <slot name="append-inner" v-bind="binds" />
+          <slot name="append-inner" v-bind="{ ...inputBind, ...binds }" />
         </template>
         <template v-if="$slots['clear']" #clear="binds">
-          <slot name="clear" v-bind="binds" />
+          <slot name="clear" v-bind="{ ...inputBind, ...binds }" />
         </template>
         <template v-if="$slots['counter']" #counter="binds">
-          <slot name="counter" v-bind="binds" />
+          <slot name="counter" v-bind="{ ...inputBind, ...binds }" />
         </template>
         <template v-if="$slots['loader']" #loader="binds">
-          <slot name="loader" v-bind="binds" />
+          <slot name="loader" v-bind="{ ...inputBind, ...binds }" />
         </template>
         <template v-if="$slots['prepend']" #prepend="binds">
-          <slot name="prepend" v-bind="binds" />
+          <slot name="prepend" v-bind="{ ...inputBind, ...binds }" />
         </template>
-        <template v-if="$slots['prepend-inner']" #prepend-inner="binds">
-          <slot name="prepend-inner" v-bind="binds" />
-        </template>
-      </RcSesTextField>
+      </RcSesDateInput>
     </template>
 
     <template #month-year="{ month, year, months, updateMonthYear }">
@@ -109,15 +119,15 @@
     </template>
 
     <template v-if="range" #action-preview>
-      <v-btn variant="text" color="primary" class="text-body-2" @click="getThisWeek"
-        >Ši savaitė</v-btn
-      >
-      <v-btn variant="text" color="primary" class="text-body-2" @click="getThisMonth"
-        >Šis mėnuo</v-btn
-      >
-      <v-btn variant="text" color="primary" class="text-body-2" @click="getLastMonth"
-        >Praėjęs mėnuo</v-btn
-      >
+      <v-btn variant="text" color="primary" class="text-body-2" @click="getThisWeek">
+        Ši savaitė
+      </v-btn>
+      <v-btn variant="text" color="primary" class="text-body-2" @click="getThisMonth">
+        Šis mėnuo
+      </v-btn>
+      <v-btn variant="text" color="primary" class="text-body-2" @click="getLastMonth">
+        Praėjęs mėnuo
+      </v-btn>
     </template>
 
     <template #calendar-icon>
@@ -133,11 +143,11 @@
 <script setup lang="ts">
 import DatePicker from '@vuepic/vue-datepicker'
 import '@vuepic/vue-datepicker/dist/main.css'
-import { nextTick, ref, watch } from 'vue'
+import { nextTick, ref } from 'vue'
 
 import XCircleFilledIcon from '@/assets/icons/filled/XCircleFilledIcon.vue'
+import RcSesDateInput from '@/components/common/inputs/Datepickers/DateInput/RcSesDateInput.vue'
 import { DatePickerProps } from '@/components/common/inputs/Datepickers/DatePicker/types'
-import RcSesTextField from '@/components/common/inputs/TextField/RcSesTextField.vue'
 
 import './style.scss'
 
@@ -145,43 +155,6 @@ const props = defineProps<DatePickerProps>()
 
 const datepickerRef = ref<any>(null)
 const modelValue = defineModel<any>()
-const displayValue = ref('')
-
-const formatSingleDate = (dt: Date): string => {
-  return dt.toISOString().split('T')[0] ?? '' // YYYY-MM-DD
-}
-
-const formatDateRange = (startDate: Date, endDate: Date): any => {
-  const start = formatSingleDate(startDate)
-  const end = formatSingleDate(endDate)
-  return `${start}  →  ${end}`
-}
-
-const formatPreview = (
-  dt: string | Date | Date[] | ((date: Date) => string) | ((dates: Date[]) => string),
-): string => {
-  if (Array.isArray(dt) && dt.length === 2) {
-    // Date range
-    const [start, end] = dt
-    if (start instanceof Date && end instanceof Date) {
-      return formatDateRange(start, end)
-    }
-    return 'Invalid date range'
-  }
-  if (dt instanceof Date) {
-    // Single date
-    return formatSingleDate(dt)
-  }
-  if (typeof dt === 'function') {
-    // Handle function cases if needed
-    return 'Function provided'
-  }
-  if (typeof dt === 'string') {
-    // Handle string case
-    return dt
-  }
-  return 'Invalid date format'
-}
 
 const handleMonthYearChange = (month?: number, year?: number, updateMonthYear?: any) => {
   if (!updateMonthYear || month === undefined || year === undefined) {
@@ -198,9 +171,7 @@ const handleMonthYearChange = (month?: number, year?: number, updateMonthYear?: 
 }
 
 const handleChange = (value: any) => {
-  modelValue.value = value === null ? '' : value
-  displayValue.value = ''
-  // console.log('handleChange', value)
+  modelValue.value = value
 }
 
 const selectDate = () => {
@@ -223,33 +194,20 @@ const getThisWeek = () => {
   const today = new Date()
   const firstDay = new Date(today.setDate(today.getDate() - today.getDay() + 1))
   const lastDay = new Date(today.setDate(today.getDate() - today.getDay() + 7))
-  if (modelValue.value) {
-    modelValue.value = [firstDay, lastDay]
-    displayValue.value = formatPreview([firstDay, lastDay])
-  }
+  modelValue.value = [firstDay, lastDay]
 }
 
 const getThisMonth = () => {
   const today = new Date()
   const firstDay = new Date(today.getFullYear(), today.getMonth(), 1)
   const lastDay = new Date(today.getFullYear(), today.getMonth() + 1, 0)
-  if (modelValue.value) {
-    modelValue.value = [firstDay, lastDay]
-    displayValue.value = formatPreview([firstDay, lastDay])
-  }
+  modelValue.value = [firstDay, lastDay]
 }
 
 const getLastMonth = () => {
   const today = new Date()
   const firstDay = new Date(today.getFullYear(), today.getMonth() - 1, 1)
   const lastDay = new Date(today.getFullYear(), today.getMonth(), 0)
-  if (modelValue.value) {
-    modelValue.value = [firstDay, lastDay]
-    displayValue.value = formatPreview([firstDay, lastDay])
-  }
+  modelValue.value = [firstDay, lastDay]
 }
-
-watch(modelValue, (newValue) => {
-  displayValue.value = formatPreview(newValue)
-})
 </script>
