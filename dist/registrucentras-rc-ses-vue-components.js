@@ -7881,6 +7881,7 @@ const w0 = ["color", "file", "time", "date", "datetime-local", "week", "month"],
           modelValue: l.value,
           "onUpdate:modelValue": f[0] || (f[0] = (h) => l.value = h)
         }, c.inputProps, {
+          disabled: c.disabled,
           placeholder: c.placeholder,
           name: c.name,
           "max-width": c.maxWidth,
@@ -7943,7 +7944,7 @@ const w0 = ["color", "file", "time", "date", "datetime-local", "week", "month"],
             ]),
             key: "5"
           } : void 0
-        ]), 1040, ["modelValue", "placeholder", "name", "max-width", "range", "readonly", "error"])
+        ]), 1040, ["modelValue", "disabled", "placeholder", "name", "max-width", "range", "readonly", "error"])
       ]),
       "month-year": I(({ month: m, year: h, months: g, updateMonthYear: p }) => {
         var S;

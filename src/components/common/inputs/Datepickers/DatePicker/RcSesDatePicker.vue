@@ -31,6 +31,7 @@
       <RcSesDateInput
         v-model="modelValue"
         v-bind="inputProps"
+        :disabled="disabled"
         :placeholder="placeholder"
         :name="name"
         :max-width="maxWidth"
