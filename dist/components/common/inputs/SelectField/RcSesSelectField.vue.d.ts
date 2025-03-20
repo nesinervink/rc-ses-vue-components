@@ -1,5 +1,5 @@
 import { SelectFieldItemType, SelectFieldProps } from './type';
-import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, TransitionProps, Component, JSXComponent, StyleValue, VNodeProps, AllowedComponentProps, ComponentCustomProps, VNodeChild, ComputedRef, Ref, PropType } from 'vue';
+import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, TransitionProps, Component, StyleValue, VNodeProps, AllowedComponentProps, ComponentCustomProps, VNodeChild, ComputedRef, Ref, PropType } from 'vue';
 
 declare let __VLS_typeProps: SelectFieldProps;
 type __VLS_PublicProps = {
@@ -169,8 +169,8 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
     width: string | number;
     density: "default" | "comfortable" | "compact" | null;
     baseColor: string;
-    prependIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
-    appendIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
+    prependIcon: any;
+    appendIcon: any;
     name: string;
     valueComparator: (a: any, b: any) => boolean;
     focused: boolean;
@@ -184,12 +184,12 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
     messages: string | readonly string[];
     direction: "horizontal" | "vertical";
     placeholder: string;
-    clearIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
+    clearIcon: any;
     clearable: boolean;
     dirty: boolean;
     persistentClear: boolean;
     singleLine: boolean;
-    prependInnerIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
+    prependInnerIcon: any;
     autofocus: boolean;
     counter: string | number | boolean;
     counterValue: (number | ((value: any) => number)) & (number | ((value: any) => number));
@@ -227,24 +227,24 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
             select: (data: {
                 id: unknown;
                 value: boolean;
-                selected: Map<unknown, "indeterminate" | "off" | "on">;
+                selected: Map<unknown, "indeterminate" | "on" | "off">;
                 children: Map<unknown, unknown[]>;
                 parents: Map<unknown, unknown>;
                 event?: Event | undefined;
-            }) => Map<unknown, "indeterminate" | "off" | "on">;
-            in: (v: readonly unknown[] | undefined, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => Map<unknown, "indeterminate" | "off" | "on">;
-            out: (v: Map<unknown, "indeterminate" | "off" | "on">, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => unknown[];
+            }) => Map<unknown, "indeterminate" | "on" | "off">;
+            in: (v: readonly unknown[] | undefined, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => Map<unknown, "indeterminate" | "on" | "off">;
+            out: (v: Map<unknown, "indeterminate" | "on" | "off">, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => unknown[];
         } | ((mandatory: boolean) => {
             select: (data: {
                 id: unknown;
                 value: boolean;
-                selected: Map<unknown, "indeterminate" | "off" | "on">;
+                selected: Map<unknown, "indeterminate" | "on" | "off">;
                 children: Map<unknown, unknown[]>;
                 parents: Map<unknown, unknown>;
                 event?: Event | undefined;
-            }) => Map<unknown, "indeterminate" | "off" | "on">;
-            in: (v: readonly unknown[] | undefined, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => Map<unknown, "indeterminate" | "off" | "on">;
-            out: (v: Map<unknown, "indeterminate" | "off" | "on">, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => unknown[];
+            }) => Map<unknown, "indeterminate" | "on" | "off">;
+            in: (v: readonly unknown[] | undefined, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => Map<unknown, "indeterminate" | "on" | "off">;
+            out: (v: Map<unknown, "indeterminate" | "on" | "off">, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => unknown[];
         })>;
         openStrategy: NonNullable<"multiple" | "list" | "single" | {
             open: (data: {
@@ -259,7 +259,7 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
                 id: unknown;
                 value: boolean;
                 opened: Set<unknown>;
-                selected: Map<unknown, "indeterminate" | "off" | "on">;
+                selected: Map<unknown, "indeterminate" | "on" | "off">;
                 children: Map<unknown, unknown[]>;
                 parents: Map<unknown, unknown>;
                 event?: Event | undefined;
@@ -285,24 +285,24 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
             select: (data: {
                 id: unknown;
                 value: boolean;
-                selected: Map<unknown, "indeterminate" | "off" | "on">;
+                selected: Map<unknown, "indeterminate" | "on" | "off">;
                 children: Map<unknown, unknown[]>;
                 parents: Map<unknown, unknown>;
                 event?: Event | undefined;
-            }) => Map<unknown, "indeterminate" | "off" | "on">;
-            in: (v: readonly unknown[] | undefined, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => Map<unknown, "indeterminate" | "off" | "on">;
-            out: (v: Map<unknown, "indeterminate" | "off" | "on">, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => unknown[];
+            }) => Map<unknown, "indeterminate" | "on" | "off">;
+            in: (v: readonly unknown[] | undefined, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => Map<unknown, "indeterminate" | "on" | "off">;
+            out: (v: Map<unknown, "indeterminate" | "on" | "off">, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => unknown[];
         } | ((mandatory: boolean) => {
             select: (data: {
                 id: unknown;
                 value: boolean;
-                selected: Map<unknown, "indeterminate" | "off" | "on">;
+                selected: Map<unknown, "indeterminate" | "on" | "off">;
                 children: Map<unknown, unknown[]>;
                 parents: Map<unknown, unknown>;
                 event?: Event | undefined;
-            }) => Map<unknown, "indeterminate" | "off" | "on">;
-            in: (v: readonly unknown[] | undefined, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => Map<unknown, "indeterminate" | "off" | "on">;
-            out: (v: Map<unknown, "indeterminate" | "off" | "on">, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => unknown[];
+            }) => Map<unknown, "indeterminate" | "on" | "off">;
+            in: (v: readonly unknown[] | undefined, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => Map<unknown, "indeterminate" | "on" | "off">;
+            out: (v: Map<unknown, "indeterminate" | "on" | "off">, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => unknown[];
         })>;
         openStrategy: NonNullable<"multiple" | "list" | "single" | {
             open: (data: {
@@ -317,7 +317,7 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
                 id: unknown;
                 value: boolean;
                 opened: Set<unknown>;
-                selected: Map<unknown, "indeterminate" | "off" | "on">;
+                selected: Map<unknown, "indeterminate" | "on" | "off">;
                 children: Map<unknown, unknown[]>;
                 parents: Map<unknown, unknown>;
                 event?: Event | undefined;
@@ -391,24 +391,24 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
             select: (data: {
                 id: unknown;
                 value: boolean;
-                selected: Map<unknown, "indeterminate" | "off" | "on">;
+                selected: Map<unknown, "indeterminate" | "on" | "off">;
                 children: Map<unknown, unknown[]>;
                 parents: Map<unknown, unknown>;
                 event?: Event | undefined;
-            }) => Map<unknown, "indeterminate" | "off" | "on">;
-            in: (v: readonly unknown[] | undefined, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => Map<unknown, "indeterminate" | "off" | "on">;
-            out: (v: Map<unknown, "indeterminate" | "off" | "on">, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => unknown[];
+            }) => Map<unknown, "indeterminate" | "on" | "off">;
+            in: (v: readonly unknown[] | undefined, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => Map<unknown, "indeterminate" | "on" | "off">;
+            out: (v: Map<unknown, "indeterminate" | "on" | "off">, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => unknown[];
         } | ((mandatory: boolean) => {
             select: (data: {
                 id: unknown;
                 value: boolean;
-                selected: Map<unknown, "indeterminate" | "off" | "on">;
+                selected: Map<unknown, "indeterminate" | "on" | "off">;
                 children: Map<unknown, unknown[]>;
                 parents: Map<unknown, unknown>;
                 event?: Event | undefined;
-            }) => Map<unknown, "indeterminate" | "off" | "on">;
-            in: (v: readonly unknown[] | undefined, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => Map<unknown, "indeterminate" | "off" | "on">;
-            out: (v: Map<unknown, "indeterminate" | "off" | "on">, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => unknown[];
+            }) => Map<unknown, "indeterminate" | "on" | "off">;
+            in: (v: readonly unknown[] | undefined, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => Map<unknown, "indeterminate" | "on" | "off">;
+            out: (v: Map<unknown, "indeterminate" | "on" | "off">, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => unknown[];
         })>;
         openStrategy: NonNullable<"multiple" | "list" | "single" | {
             open: (data: {
@@ -423,7 +423,7 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
                 id: unknown;
                 value: boolean;
                 opened: Set<unknown>;
-                selected: Map<unknown, "indeterminate" | "off" | "on">;
+                selected: Map<unknown, "indeterminate" | "on" | "off">;
                 children: Map<unknown, unknown[]>;
                 parents: Map<unknown, unknown>;
                 event?: Event | undefined;
@@ -691,24 +691,24 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
             select: (data: {
                 id: unknown;
                 value: boolean;
-                selected: Map<unknown, "indeterminate" | "off" | "on">;
+                selected: Map<unknown, "indeterminate" | "on" | "off">;
                 children: Map<unknown, unknown[]>;
                 parents: Map<unknown, unknown>;
                 event?: Event | undefined;
-            }) => Map<unknown, "indeterminate" | "off" | "on">;
-            in: (v: readonly unknown[] | undefined, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => Map<unknown, "indeterminate" | "off" | "on">;
-            out: (v: Map<unknown, "indeterminate" | "off" | "on">, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => unknown[];
+            }) => Map<unknown, "indeterminate" | "on" | "off">;
+            in: (v: readonly unknown[] | undefined, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => Map<unknown, "indeterminate" | "on" | "off">;
+            out: (v: Map<unknown, "indeterminate" | "on" | "off">, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => unknown[];
         } | ((mandatory: boolean) => {
             select: (data: {
                 id: unknown;
                 value: boolean;
-                selected: Map<unknown, "indeterminate" | "off" | "on">;
+                selected: Map<unknown, "indeterminate" | "on" | "off">;
                 children: Map<unknown, unknown[]>;
                 parents: Map<unknown, unknown>;
                 event?: Event | undefined;
-            }) => Map<unknown, "indeterminate" | "off" | "on">;
-            in: (v: readonly unknown[] | undefined, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => Map<unknown, "indeterminate" | "off" | "on">;
-            out: (v: Map<unknown, "indeterminate" | "off" | "on">, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => unknown[];
+            }) => Map<unknown, "indeterminate" | "on" | "off">;
+            in: (v: readonly unknown[] | undefined, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => Map<unknown, "indeterminate" | "on" | "off">;
+            out: (v: Map<unknown, "indeterminate" | "on" | "off">, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => unknown[];
         })>;
         openStrategy: NonNullable<"multiple" | "list" | "single" | {
             open: (data: {
@@ -723,7 +723,7 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
                 id: unknown;
                 value: boolean;
                 opened: Set<unknown>;
-                selected: Map<unknown, "indeterminate" | "off" | "on">;
+                selected: Map<unknown, "indeterminate" | "on" | "off">;
                 children: Map<unknown, unknown[]>;
                 parents: Map<unknown, unknown>;
                 event?: Event | undefined;
@@ -749,24 +749,24 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
             select: (data: {
                 id: unknown;
                 value: boolean;
-                selected: Map<unknown, "indeterminate" | "off" | "on">;
+                selected: Map<unknown, "indeterminate" | "on" | "off">;
                 children: Map<unknown, unknown[]>;
                 parents: Map<unknown, unknown>;
                 event?: Event | undefined;
-            }) => Map<unknown, "indeterminate" | "off" | "on">;
-            in: (v: readonly unknown[] | undefined, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => Map<unknown, "indeterminate" | "off" | "on">;
-            out: (v: Map<unknown, "indeterminate" | "off" | "on">, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => unknown[];
+            }) => Map<unknown, "indeterminate" | "on" | "off">;
+            in: (v: readonly unknown[] | undefined, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => Map<unknown, "indeterminate" | "on" | "off">;
+            out: (v: Map<unknown, "indeterminate" | "on" | "off">, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => unknown[];
         } | ((mandatory: boolean) => {
             select: (data: {
                 id: unknown;
                 value: boolean;
-                selected: Map<unknown, "indeterminate" | "off" | "on">;
+                selected: Map<unknown, "indeterminate" | "on" | "off">;
                 children: Map<unknown, unknown[]>;
                 parents: Map<unknown, unknown>;
                 event?: Event | undefined;
-            }) => Map<unknown, "indeterminate" | "off" | "on">;
-            in: (v: readonly unknown[] | undefined, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => Map<unknown, "indeterminate" | "off" | "on">;
-            out: (v: Map<unknown, "indeterminate" | "off" | "on">, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => unknown[];
+            }) => Map<unknown, "indeterminate" | "on" | "off">;
+            in: (v: readonly unknown[] | undefined, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => Map<unknown, "indeterminate" | "on" | "off">;
+            out: (v: Map<unknown, "indeterminate" | "on" | "off">, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => unknown[];
         })>;
         openStrategy: NonNullable<"multiple" | "list" | "single" | {
             open: (data: {
@@ -781,7 +781,7 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
                 id: unknown;
                 value: boolean;
                 opened: Set<unknown>;
-                selected: Map<unknown, "indeterminate" | "off" | "on">;
+                selected: Map<unknown, "indeterminate" | "on" | "off">;
                 children: Map<unknown, unknown[]>;
                 parents: Map<unknown, unknown>;
                 event?: Event | undefined;
@@ -855,24 +855,24 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
             select: (data: {
                 id: unknown;
                 value: boolean;
-                selected: Map<unknown, "indeterminate" | "off" | "on">;
+                selected: Map<unknown, "indeterminate" | "on" | "off">;
                 children: Map<unknown, unknown[]>;
                 parents: Map<unknown, unknown>;
                 event?: Event | undefined;
-            }) => Map<unknown, "indeterminate" | "off" | "on">;
-            in: (v: readonly unknown[] | undefined, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => Map<unknown, "indeterminate" | "off" | "on">;
-            out: (v: Map<unknown, "indeterminate" | "off" | "on">, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => unknown[];
+            }) => Map<unknown, "indeterminate" | "on" | "off">;
+            in: (v: readonly unknown[] | undefined, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => Map<unknown, "indeterminate" | "on" | "off">;
+            out: (v: Map<unknown, "indeterminate" | "on" | "off">, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => unknown[];
         } | ((mandatory: boolean) => {
             select: (data: {
                 id: unknown;
                 value: boolean;
-                selected: Map<unknown, "indeterminate" | "off" | "on">;
+                selected: Map<unknown, "indeterminate" | "on" | "off">;
                 children: Map<unknown, unknown[]>;
                 parents: Map<unknown, unknown>;
                 event?: Event | undefined;
-            }) => Map<unknown, "indeterminate" | "off" | "on">;
-            in: (v: readonly unknown[] | undefined, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => Map<unknown, "indeterminate" | "off" | "on">;
-            out: (v: Map<unknown, "indeterminate" | "off" | "on">, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => unknown[];
+            }) => Map<unknown, "indeterminate" | "on" | "off">;
+            in: (v: readonly unknown[] | undefined, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => Map<unknown, "indeterminate" | "on" | "off">;
+            out: (v: Map<unknown, "indeterminate" | "on" | "off">, children: Map<unknown, unknown[]>, parents: Map<unknown, unknown>) => unknown[];
         })>;
         openStrategy: NonNullable<"multiple" | "list" | "single" | {
             open: (data: {
@@ -887,7 +887,7 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
                 id: unknown;
                 value: boolean;
                 opened: Set<unknown>;
-                selected: Map<unknown, "indeterminate" | "off" | "on">;
+                selected: Map<unknown, "indeterminate" | "on" | "off">;
                 children: Map<unknown, unknown[]>;
                 parents: Map<unknown, unknown>;
                 event?: Event | undefined;
@@ -1138,7 +1138,7 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
             };
         }) => VNodeChild) | undefined;
     };
-    menuIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
+    menuIcon: any;
     openOnClear: boolean;
     itemColor: string;
     searchable: boolean;

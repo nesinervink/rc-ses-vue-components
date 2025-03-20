@@ -1,5 +1,5 @@
 import { RadioButtonsFieldProps } from './type';
-import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, JSXComponent, PropType } from 'vue';
+import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from 'vue';
 import { ColorType } from '../../../../types/common/ColorType';
 import { OptionType } from '../../../../types/common/OptionType';
 
@@ -91,11 +91,11 @@ declare const _default: DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToOpti
     minWidth: string | number;
     width: string | number;
     density: "default" | "comfortable" | "compact" | null;
-    prependIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
-    appendIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
+    prependIcon: any;
+    appendIcon: any;
     name: string;
     defaultsTarget: string;
-    trueIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
+    trueIcon: any;
     focused: boolean;
     maxErrors: string | number;
     rules: readonly ((string | boolean) | PromiseLike<string | boolean> | ((value: any) => string | boolean) | ((value: any) => PromiseLike<string | boolean>))[];

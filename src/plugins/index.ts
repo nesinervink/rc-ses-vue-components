@@ -1,8 +1,9 @@
+import I18NextVue from 'i18next-vue'
 import type { App } from 'vue'
 
-import i18n from './i18n'
+import i18next from './i18n'
 import vuetify from './vuetify'
 
 export default function registerPlugins(app: App) {
-  app.use(i18n()).use(vuetify())
+  app.use(I18NextVue, i18next()).use(vuetify())
 }

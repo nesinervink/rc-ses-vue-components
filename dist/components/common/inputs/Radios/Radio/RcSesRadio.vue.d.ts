@@ -1,5 +1,5 @@
 import { RadioProps } from './type';
-import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, JSXComponent, PropType } from 'vue';
+import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from 'vue';
 import { ColorType } from '../../../../../types/common/ColorType';
 
 declare const _default: DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToOption<RadioProps>, {
@@ -54,8 +54,8 @@ declare const _default: DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToOpti
     baseColor: string;
     name: string;
     defaultsTarget: string;
-    falseIcon: NonNullable<string | (string | [path: string, opacity: number])[] | JSXComponent>;
-    trueIcon: NonNullable<string | (string | [path: string, opacity: number])[] | JSXComponent>;
+    falseIcon: any;
+    trueIcon: any;
     valueComparator: (a: any, b: any) => boolean;
     trueValue: any;
     falseValue: any;

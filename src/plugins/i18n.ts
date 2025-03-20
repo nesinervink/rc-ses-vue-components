@@ -1,13 +1,60 @@
-import { createI18n } from 'vue-i18n'
+import i18next from 'i18next'
 
-import messages from '@/i18n'
+import CookieStorage from '@/shared/CookieStorage'
 
-const i18n = (): ReturnType<typeof createI18n> =>
-  createI18n({
-    legacy: false,
-    locale: 'lt',
-    fallbackLocale: 'en',
-    messages,
+const i18n = () => {
+  const storage = new CookieStorage()
+
+  i18next.init({
+    lng:
+      storage.getItem(window.ENV?.ENV_LANGUAGE_COOKIE_NAME) ??
+      window.ENV?.ENV_FRONTEND_DEFAULT_LANG ??
+      'lt',
+    interpolation: {
+      escapeValue: false,
+    },
+    fallbackLng: 'lt',
+    resources: {
+      lt: {
+        components: {
+          RcSesDatePicker: {
+            close: 'Uždaryti',
+            previousMonth: 'Praėjęs mėnuo',
+            thisWeek: 'Ši savaitė',
+            thisMonth: 'Šis mėnuo',
+          },
+
+          RcSesFileDropzone: {
+            label: 'Nutempkite failą čia arba įkelkite iš kompiuterio',
+          },
+
+          RcSesFileInput: {
+            label: 'Įkelti failą',
+          },
+        },
+      },
+      en: {
+        components: {
+          RcSesDatePicker: {
+            close: 'Close',
+            previousMonth: 'Previous month',
+            thisWeek: 'This week',
+            thisMonth: 'This month',
+          },
+
+          RcSesFileDropzone: {
+            label: 'Drag and drop file over this area or click here to browse',
+          },
+
+          RcSesFileInput: {
+            label: 'Upload file',
+          },
+        },
+      },
+    },
   })
+
+  return { i18next }
+}
 
 export default i18n

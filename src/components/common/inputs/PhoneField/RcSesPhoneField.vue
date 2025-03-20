@@ -34,7 +34,7 @@
         <div class="flag-wrapper" type="button" @click="openMenu" @keydown="() => {}">
           <div
             class="flag-sprite-map mr-2"
-            :class="`flag-sprite-map-${selectedCountry?.iso.toUpperCase()}`"
+            :class="`flag-${selectedCountry?.iso.toUpperCase()}`"
           />
           <v-icon icon="rc-caret-down-filled" size="14" />
           <div class="divider mx-2" />
@@ -88,7 +88,7 @@
                 <template #prepend>
                   <div
                     class="flag-sprite-map mr-2"
-                    :class="`flag-sprite-map-${item?.iso.toUpperCase()}`"
+                    :class="`flag--${item?.iso.toUpperCase()}`"
                   />
                 </template>
                 <template #title>

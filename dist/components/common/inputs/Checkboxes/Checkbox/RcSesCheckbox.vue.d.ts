@@ -1,5 +1,5 @@
 import { CheckboxProps } from './types';
-import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, JSXComponent, PropType } from 'vue';
+import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from 'vue';
 import { ColorType } from '../../../../../types/common/ColorType';
 
 declare let __VLS_typeProps: CheckboxProps;
@@ -95,15 +95,15 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
     width: string | number;
     density: "default" | "comfortable" | "compact" | null;
     baseColor: string;
-    appendIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
+    appendIcon: any;
     name: string;
     indeterminate: boolean;
     defaultsTarget: string;
-    falseIcon: NonNullable<string | (string | [path: string, opacity: number])[] | JSXComponent>;
-    trueIcon: NonNullable<string | (string | [path: string, opacity: number])[] | JSXComponent>;
+    falseIcon: any;
+    trueIcon: any;
     trueValue: any;
     falseValue: any;
-    indeterminateIcon: string | (string | [path: string, opacity: number])[] | JSXComponent;
+    indeterminateIcon: any;
     focused: boolean;
     maxErrors: string | number;
     rules: readonly ((string | boolean) | PromiseLike<string | boolean> | ((value: any) => string | boolean) | ((value: any) => PromiseLike<string | boolean>))[];
