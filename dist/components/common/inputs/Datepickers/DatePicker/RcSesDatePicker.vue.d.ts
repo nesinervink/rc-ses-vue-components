@@ -17,6 +17,7 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_TypeProps
         focus: () => void;
         blur: () => void;
         value: string;
+        /**__VLS_emit,__VLS_3,date-update*/
         isMenuOpen: boolean;
         onInput: (ev: string | Event) => void;
         onEnter: (ev: KeyboardEvent) => void;
@@ -43,6 +44,7 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_TypeProps
         resetValidation: () => void;
         validate: () => void;
         value: string;
+        /**__VLS_emit,__VLS_3,date-update*/
         isMenuOpen: boolean;
         onInput: (ev: string | Event) => void;
         onEnter: (ev: KeyboardEvent) => void;
@@ -63,6 +65,7 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_TypeProps
         focus: () => void;
         blur: () => void;
         value: string;
+        /**__VLS_emit,__VLS_3,date-update*/
         isMenuOpen: boolean;
         onInput: (ev: string | Event) => void;
         onEnter: (ev: KeyboardEvent) => void;
@@ -84,6 +87,7 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_TypeProps
         blur: () => void;
         props: Record<string, any>;
         value: string;
+        /**__VLS_emit,__VLS_3,date-update*/
         isMenuOpen: boolean;
         onInput: (ev: string | Event) => void;
         onEnter: (ev: KeyboardEvent) => void;
@@ -101,6 +105,7 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_TypeProps
         counter: string;
         max: string | number | undefined;
         value: string | number | undefined;
+        /**__VLS_emit,__VLS_3,date-update*/
         isMenuOpen: boolean;
         onInput: (ev: string | Event) => void;
         onEnter: (ev: KeyboardEvent) => void;
@@ -118,6 +123,7 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_TypeProps
         color: string | undefined;
         isActive: boolean;
         value: string;
+        /**__VLS_emit,__VLS_3,date-update*/
         isMenuOpen: boolean;
         onInput: (ev: string | Event) => void;
         onEnter: (ev: KeyboardEvent) => void;
@@ -144,6 +150,7 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_TypeProps
         resetValidation: () => void;
         validate: () => void;
         value: string;
+        /**__VLS_emit,__VLS_3,date-update*/
         isMenuOpen: boolean;
         onInput: (ev: string | Event) => void;
         onEnter: (ev: KeyboardEvent) => void;

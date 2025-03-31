@@ -6,7 +6,7 @@
     :enable-time-picker="false"
     :week-start="1"
     :month-change-on-scroll="true"
-    locale="lt"
+    :locale="language"
     month-name-format="long"
     :name="name"
     :disabled="disabled"
@@ -155,7 +155,10 @@ import { DatePickerProps } from '@/components/common/inputs/Datepickers/DatePick
 
 import './style.scss'
 
-const { t } = useTranslation()
+const {
+  t,
+  i18next: { language },
+} = useTranslation()
 
 const props = defineProps<DatePickerProps>()
 
