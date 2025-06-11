@@ -12828,9 +12828,12 @@ const yo = T({
       id: o,
       offset: 6,
       class: { "rc-searchable-menu": a.searchable }
-    }), r = (f) => `${f.title} ${f == null ? void 0 : f.subtitle}`.toLowerCase(), u = (f) => typeof f.value == "string" ? f.value : f.value.toString(), d = y(() => l.value ? a.items.filter(
-      (f) => l.value ? r(f).includes(l.value.toLowerCase()) : !1
-    ) : a.items), v = () => {
+    }), r = (f) => `${f.title} ${f == null ? void 0 : f.subtitle}`.toLowerCase(), u = (f) => typeof f.value == "string" ? f.value : f.value.toString(), d = y(() => {
+      var f;
+      return (f = l.value) != null && f.trim() ? a.items.filter(
+        (c) => l.value ? r(c).includes(l.value.toLowerCase().trim()) : !1
+      ) : a.items;
+    }), v = () => {
       setTimeout(() => {
         const f = document.getElementById(o);
         if (!f)
