@@ -116,13 +116,13 @@ const getItemValue = (item: SelectFieldItemType): string => {
 }
 
 const computedItems = computed(() => {
-  if (!searchValue.value) {
+  if (!searchValue.value?.trim()) {
     return selectProps.items
   }
 
   return selectProps.items.filter((item: SelectFieldItemType) =>
     searchValue.value
-      ? getItemValueForSearch(item).includes(searchValue.value.toLowerCase())
+      ? getItemValueForSearch(item).includes(searchValue.value.toLowerCase().trim())
       : false,
   )
 })
