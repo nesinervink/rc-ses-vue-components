@@ -96,6 +96,7 @@
 
   <RcSesNumberStepperField
     v-model="modelEgzemplioriuSkaicius"
+    name="egzemplioriuSkaicius"
     v-bind="modelEgzemplioriuSkaiciusProps"
     :error="errors.egzemplioriuSkaicius"
     field-label="Egzempliorių skaičius"

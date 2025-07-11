@@ -149,19 +149,12 @@
           :error="fieldProps.errorMessage"
           class="form-control"
           field-label="Skaičius"
+          field-tooltip-title="Tolltip title"
+          field-tooltip="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard."
           :max-width="300"
           name="skaicius"
           required
-        >
-          <template #append-inner>
-            <RcSesTooltip
-              title="Tooltip title"
-              description="Tooltip description"
-              :open-on-click="true"
-              :open-on-hover="false"
-            ></RcSesTooltip>
-          </template>
-        </RcSesNumberStepperField>
+        />
       </Field>
 
       <Field v-slot="fieldProps" name="sutikimas">

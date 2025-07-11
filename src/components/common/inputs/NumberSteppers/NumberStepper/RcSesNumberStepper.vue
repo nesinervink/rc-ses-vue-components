@@ -1,6 +1,7 @@
 <template>
   <div class="rc-number-stepper" :class="stepperClasses">
     <v-text-field
+      :id="name"
       v-model="model"
       class="rc-field"
       :disabled="disabled"

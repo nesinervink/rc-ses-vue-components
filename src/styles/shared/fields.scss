@@ -10,8 +10,10 @@
     }
   }
 
-  input::placeholder {
-    color: rgb(var(--v-theme-grey-500));
+  input::placeholder,
+  .v-field__input::placeholder {
+    color: rgb(var(--v-theme-grey-600)) !important;
+    opacity: 1;
   }
 
   &.v-input {

@@ -19,6 +19,7 @@ const i18n = () => {
         components: {
           RcSesDatePicker: {
             close: 'Uždaryti',
+            openCalendar: 'Atverti datos pasirinkimo kalendorių',
             previousMonth: 'Praėjęs mėnuo',
             thisWeek: 'Ši savaitė',
             thisMonth: 'Šis mėnuo',
@@ -37,6 +38,7 @@ const i18n = () => {
         components: {
           RcSesDatePicker: {
             close: 'Close',
+            openCalendar: 'Open datepicker calendar',
             previousMonth: 'Previous month',
             thisWeek: 'This week',
             thisMonth: 'This month',
