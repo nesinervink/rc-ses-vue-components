@@ -18,14 +18,14 @@
           :description="tooltip"
           location="top"
           :open-on-click="tooltipOnClick"
+          :open-on-focus="tooltipOnClick"
           :open-on-hover="!tooltipOnClick"
         >
-          <template #activator="activator">
+          <template #activator>
             <v-icon
-              v-bind="activator.props"
               icon="$tooltip"
               size="small"
-              class="rc-tooltip-label-icon rc-tooltip-mobile ml-2"
+              class="rc-tooltip-label-icon rc-tooltip-mobile"
             />
           </template>
         </RcSesTooltip>
@@ -50,14 +50,14 @@
         :title="tooltipTitle"
         :description="tooltip"
         :open-on-click="tooltipOnClick"
+        :open-on-focus="tooltipOnClick"
         :open-on-hover="!tooltipOnClick"
       >
-        <template #activator="activator">
+        <template #activator>
           <v-icon
-            v-bind="activator.props"
             icon="$tooltip"
             size="small"
-            class="rc-tooltip-input-icon rc-tooltip-desktop ml-2"
+            class="rc-tooltip-input-icon rc-tooltip-desktop"
           />
         </template>
       </RcSesTooltip>

@@ -44,6 +44,7 @@
         <template #prepend-inner="binds">
           <slot name="prepend-inner" v-bind="{ ...inputBind, ...binds }">
             <v-icon
+              :aria-label="t('RcSesDatePicker.openCalendar', { ns: 'components' })"
               icon="$calendar"
               @click="inputBind.isMenuOpen ? inputBind.closeMenu() : inputBind.openMenu()"
             />

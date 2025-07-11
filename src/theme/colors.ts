@@ -1,16 +1,16 @@
 const primary = {
-  'primary-50': '#ECF9FE',
-  'primary-100': '#DCF4FC',
-  'primary-200': '#B9E9FA',
-  'primary-300': '#88DAF7',
-  'primary-400': '#50C9F3',
-  'primary-500': '#06A0D4',
-  'primary-600': '#087FB2',
-  'primary-700': '#0E6790',
+  'primary-50': '#ecf9fe',
+  'primary-100': '#dcf4fc',
+  'primary-200': '#b9e9fa',
+  'primary-300': '#88daf7',
+  'primary-400': '#50c9f3',
+  'primary-500': '#06a0d4',
+  'primary-600': '#087fb2',
+  'primary-700': '#0e6790',
   'primary-800': '#155575',
   'primary-900': '#164763',
-  'primary-950': '#082D44',
-  primary: '#06A0D4',
+  'primary-950': '#082d44',
+  primary: '#06a0d4',
 }
 
 const secondary = {

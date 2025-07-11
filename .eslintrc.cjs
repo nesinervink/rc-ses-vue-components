@@ -28,6 +28,7 @@ module.exports = {
     'vite.config.build.mts',
     'vite.config.mts',
     'dist',
+    'public',
   ],
   rules: {
     'vue/multi-word-component-names': 'off',

@@ -1,5 +1,5 @@
 import { TooltipProps } from './type';
-import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, ComponentPublicInstance, PropType } from 'vue';
+import { DefineComponent, ComponentOptionsMixin, PublicProps, ExtractPropTypes, PropType } from 'vue';
 
 declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefaults<__VLS_TypePropsToOption<TooltipProps>, {
     title: undefined;
@@ -17,15 +17,7 @@ declare const _default: __VLS_WithTemplateSlots< DefineComponent<__VLS_WithDefau
     description: string;
     contained: boolean;
 }, {}>, {
-    activator?(_: {
-        isActive: boolean;
-        props: Record<string, any>;
-        targetRef: {
-            (target: Element | ComponentPublicInstance | null): void;
-            value: HTMLElement | ComponentPublicInstance | null | undefined;
-            readonly el: HTMLElement | undefined;
-        };
-    }): any;
+    activator?(_: {}): any;
     default?(_: {}): any;
     title?(_: {}): any;
     description?(_: {}): any;

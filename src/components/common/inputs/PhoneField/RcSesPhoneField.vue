@@ -78,6 +78,7 @@
             max-height="300"
             item-height="48"
             class="rc-menu-scroll rc-scrollable"
+            lang="en"
           >
             <template #default="{ item }">
               <v-list-item

@@ -10,6 +10,7 @@
   >
     <RcSesNumberStepper
       v-model="model"
+      :name="name"
       :min="min"
       :max="max"
       :step="step"

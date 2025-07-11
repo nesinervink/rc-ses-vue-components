@@ -143,8 +143,14 @@
   }
 
   .dp__action_row {
-    padding: 0.5rem 0.625rem; // 8px 10px
     background: rgb(var(--v-theme-grey-50));
+    padding: .5rem .625rem;
+  }
+
+  .dp__action_buttons {
+    .v-btn {
+      --v-btn-size: 0.875rem;
+    }
   }
 
   .dp__calendar {

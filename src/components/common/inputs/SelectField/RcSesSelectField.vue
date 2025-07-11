@@ -10,9 +10,10 @@
     :required="required"
   >
     <v-select
+      v-bind="$attrs"
+      :id="name"
       ref="selectRef"
       v-model="model"
-      v-bind="$attrs"
       :name="name"
       class="rc-field rc-select-field"
       variant="outlined"

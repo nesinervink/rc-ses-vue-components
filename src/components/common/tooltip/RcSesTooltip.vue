@@ -1,14 +1,11 @@
 <template>
-  <v-tooltip class="rc-tooltip p0" v-bind="props" :close-on-content-click="true">
+  <v-tooltip v-bind="props" v-model="visible" class="rc-tooltip p0">
     <template #activator="binds">
-      <slot name="activator" v-bind="binds">
-        <v-icon
-          v-bind="binds.props"
-          icon="$tooltip"
-          size="small"
-          class="rc-tooltip--label-icon ml-2"
-        />
-      </slot>
+      <v-btn v-bind="binds.props" class="rc-tooltip-activator-btn" icon size="small">
+        <slot name="activator">
+          <v-icon icon="$tooltip" size="small" class="rc-tooltip--label-icon" />
+        </slot>
+      </v-btn>
     </template>
 
     <template #default>
@@ -29,8 +26,12 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+
 import './style.scss'
 import { TooltipProps } from './type'
+
+const visible = ref<boolean>(false)
 
 const props = withDefaults(defineProps<TooltipProps>(), {
   title: undefined,

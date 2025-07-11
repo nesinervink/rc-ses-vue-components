@@ -10,7 +10,7 @@
   >
     <v-text-field
       v-bind="$attrs"
-      id="id"
+      :id="name"
       v-model="model"
       class="rc-field rc-text-field"
       variant="outlined"
