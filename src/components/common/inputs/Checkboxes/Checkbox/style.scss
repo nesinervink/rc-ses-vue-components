@@ -26,7 +26,7 @@
   }
 
   // HOVER STATE
-  &:hover .v-selection-control__input {
+  &:hover:not(.v-input--disabled):not(.v-input--readonly) .v-selection-control__input {
     .v-icon {
       border-radius: 4px;
       box-shadow: 0 0 0 3px rgba(var(--v-theme-primary), 0.2);
@@ -38,7 +38,9 @@
   }
 
   // DISABLED STATE
-  &.v-input--disabled .v-selection-control__input {
+  &.v-input--disabled .v-selection-control__input,
+  &.v-input--readonly .v-selection-control__input
+   {
     .v-icon {
       color: white;
     }

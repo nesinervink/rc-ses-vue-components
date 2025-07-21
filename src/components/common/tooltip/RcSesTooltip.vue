@@ -1,7 +1,13 @@
 <template>
   <v-tooltip v-bind="props" v-model="visible" class="rc-tooltip p0">
     <template #activator="binds">
-      <v-btn v-bind="binds.props" class="rc-tooltip-activator-btn" icon size="small">
+      <v-btn
+        v-bind="binds.props"
+        class="rc-tooltip-activator-btn"
+        icon
+        size="small"
+        @keyup.esc="() => (visible = false)"
+      >
         <slot name="activator">
           <v-icon icon="$tooltip" size="small" class="rc-tooltip--label-icon" />
         </slot>
