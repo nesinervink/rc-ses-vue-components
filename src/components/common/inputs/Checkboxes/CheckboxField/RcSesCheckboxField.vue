@@ -15,6 +15,7 @@
         v-model="model"
         v-bind="$attrs"
         :label="label"
+        :readonly="readonly"
         :error="undefined"
         :true-value="trueValue"
         :false-value="falseValue"

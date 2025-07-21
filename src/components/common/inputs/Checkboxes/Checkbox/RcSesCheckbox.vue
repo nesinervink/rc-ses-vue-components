@@ -1,6 +1,7 @@
 <template>
   <v-checkbox
     v-model="model"
+    :aria-disabled="disabled || readonly"
     class="rc-checkbox"
     :class="classes"
     :name="name"

@@ -25,6 +25,7 @@ export type CheckboxProps = InputProps & {
     messages?: VCheckbox['$props']['messages'];
     minWidth?: VCheckbox['$props']['minWidth'];
     persistentHint?: VCheckbox['$props']['persistentHint'];
+    readonly?: VCheckbox['$props']['readonly'];
     rules?: VCheckbox['$props']['rules'];
     theme?: VCheckbox['$props']['theme'];
     trueIcon?: VCheckbox['$props']['trueIcon'];
