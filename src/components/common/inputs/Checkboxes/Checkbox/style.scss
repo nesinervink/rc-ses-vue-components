@@ -39,10 +39,9 @@
 
   // DISABLED STATE
   &.v-input--disabled .v-selection-control__input,
-  &.v-input--readonly .v-selection-control__input
-   {
+  &.v-input--readonly .v-selection-control__input {
     .v-icon {
-      color: white;
+      opacity: 0.333;
     }
   }
 
