@@ -148,3 +148,4 @@ export type { UseFormType }
 
 export * from '@/assets/icons/regular'
 export * from '@/assets/icons/filled'
+export * from '@/assets/icons/bold'
